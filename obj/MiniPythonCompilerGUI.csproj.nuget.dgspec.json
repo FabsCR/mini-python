@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects\\mini-python\\MiniPythonCompilerGUI.csproj": {}
+    "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\mini-python\\MiniPythonCompilerGUI.csproj": {}
   },
   "projects": {
-    "D:\\projects\\mini-python\\MiniPythonCompilerGUI.csproj": {
+    "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\mini-python\\MiniPythonCompilerGUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\mini-python\\MiniPythonCompilerGUI.csproj",
+        "projectUniqueName": "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\mini-python\\MiniPythonCompilerGUI.csproj",
         "projectName": "MiniPythonCompilerGUI",
-        "projectPath": "D:\\projects\\mini-python\\MiniPythonCompilerGUI.csproj",
-        "packagesPath": "C:\\Users\\fabia\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\mini-python\\obj\\",
+        "projectPath": "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\mini-python\\MiniPythonCompilerGUI.csproj",
+        "packagesPath": "C:\\Users\\kvnji\\.nuget\\packages\\",
+        "outputPath": "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\mini-python\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\fabia\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\kvnji\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0-windows"
@@ -32,11 +32,34 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Antlr4": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[4.6.6, )"
+            },
+            "Antlr4.CodeGenerator": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[4.6.6, )"
+            },
+            "Antlr4.Runtime": {
+              "target": "Package",
+              "version": "[4.6.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -56,7 +79,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\kvnji\\.dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

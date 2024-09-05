@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MiniPythonCompilerGUI
-build_property.ProjectDir = D:\projects\mini-python\
+build_property.ProjectDir = D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
