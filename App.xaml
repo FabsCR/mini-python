@@ -1,7 +1,7 @@
-﻿<Application x:Class="MiniPython.App"
+﻿<Application x:Class="MiniPythonCompilerGUI.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:MiniPython"
+             xmlns:local="clr-namespace:MiniPythonCompilerGUI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          
