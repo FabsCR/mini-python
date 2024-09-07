@@ -55,9 +55,9 @@
               "target": "Package",
               "version": "[4.6.6, )"
             },
-            "Antlr4.Runtime": {
+            "Antlr4.Runtime.Standard": {
               "target": "Package",
-              "version": "[4.6.6, )"
+              "version": "[4.13.1, )"
             }
           },
           "imports": [
