@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "1LGy/3S2MV0=",
+  "success": true,
+  "projectFilePath": "/home/fabs/RiderProjects/MiniPython/MiniPython/MiniPython.csproj",
+  "expectedPackageFiles": [
+    "/home/fabs/.nuget/packages/antlr4.runtime.standard/4.13.1/antlr4.runtime.standard.4.13.1.nupkg.sha512",
+    "/home/fabs/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.8/microsoft.aspnetcore.app.ref.8.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}

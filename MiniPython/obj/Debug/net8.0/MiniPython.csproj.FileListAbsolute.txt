@@ -1,0 +1,12 @@
+/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPython.csproj.AssemblyReference.cache
+/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPythonLexer.cs
+/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPythonParser.cs
+/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPythonParserListener.cs
+/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPythonParserBaseListener.cs
+/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPythonParserVisitor.cs
+/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPythonParserBaseVisitor.cs
+/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPython.csproj.Antlr4GeneratedCodeFileListAbsolute.txt
+/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPython.GeneratedMSBuildEditorConfig.editorconfig
+/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPython.AssemblyInfoInputs.cache
+/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPython.AssemblyInfo.cs
+/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPython.csproj.CoreCompileInputs.cache
