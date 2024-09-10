@@ -1,6 +1,0 @@
-/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPythonLexer.cs
-/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPythonParser.cs
-/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPythonParserListener.cs
-/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPythonParserBaseListener.cs
-/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPythonParserVisitor.cs
-/home/fabs/RiderProjects/MiniPython/MiniPython/obj/Debug/net8.0/MiniPythonParserBaseVisitor.cs

@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniPython", "MiniPython\MiniPython.csproj", "{5EA4076F-1456-4FB1-A98A-FDC5F7F9078E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniPython", "MiniPython.csproj", "{461D6FFB-77D9-4AEA-B61F-42CBA32745F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5EA4076F-1456-4FB1-A98A-FDC5F7F9078E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5EA4076F-1456-4FB1-A98A-FDC5F7F9078E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5EA4076F-1456-4FB1-A98A-FDC5F7F9078E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5EA4076F-1456-4FB1-A98A-FDC5F7F9078E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{461D6FFB-77D9-4AEA-B61F-42CBA32745F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{461D6FFB-77D9-4AEA-B61F-42CBA32745F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{461D6FFB-77D9-4AEA-B61F-42CBA32745F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{461D6FFB-77D9-4AEA-B61F-42CBA32745F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
