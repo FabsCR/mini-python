@@ -10,19 +10,6 @@
     <list default="true" id="949788e6-66da-4c63-86a8-bcb017822ad9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MiniPython/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/bin/Debug/net8.0/MiniPython.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/bin/Debug/net8.0/MiniPython.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/bin/Debug/net8.0/MiniPython.exe" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/bin/Debug/net8.0/MiniPython.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/bin/Debug/net8.0/MiniPython.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/bin/Debug/net8.0/MiniPython.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/ref/MiniPython.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/ref/MiniPython.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/refint/MiniPython.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/refint/MiniPython.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1725931717326</updated>
       <workItem from="1725931718460" duration="8143000" />
-      <workItem from="1725940135649" duration="1213000" />
+      <workItem from="1725940135649" duration="1424000" />
     </task>
     <servers />
   </component>
