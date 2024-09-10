@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1LGy/3S2MV0=",
+  "dgSpecHash": "Z6kYp8D2k0GGUDS31ZyshDXyYTgJ06S+JTEGbycZRdhThB5EqPoYHJEt1AbxRajB72rrMeE1pYgUKCsH78iu6w==",
   "success": true,
-  "projectFilePath": "/home/fabs/RiderProjects/MiniPython/MiniPython/MiniPython.csproj",
+  "projectFilePath": "D:\\projects\\mini-python\\MiniPython\\MiniPython.csproj",
   "expectedPackageFiles": [
-    "/home/fabs/.nuget/packages/antlr4.runtime.standard/4.13.1/antlr4.runtime.standard.4.13.1.nupkg.sha512",
-    "/home/fabs/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.8/microsoft.aspnetcore.app.ref.8.0.8.nupkg.sha512"
+    "C:\\Users\\fabia\\.nuget\\packages\\antlr4.runtime.standard\\4.13.1\\antlr4.runtime.standard.4.13.1.nupkg.sha512"
   ],
   "logs": []
 }

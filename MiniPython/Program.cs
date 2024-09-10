@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Antlr4.Runtime;
 
 namespace MiniPython
@@ -8,24 +9,35 @@ namespace MiniPython
         static void Main(string[] args)
         {
             Console.WriteLine("MiniPython Interpreter");
-            if (args.Length == 0)
+
+            // Obtener el directorio donde se encuentra el código fuente (uno o dos niveles arriba de bin/Debug)
+            string projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            Console.WriteLine($"Carpeta del proyecto: {projectDirectory}");
+
+            // Generar la ruta completa para 'test.txt'
+            string filePath = Path.Combine(projectDirectory, "test.txt");
+
+            // Comprobar si el archivo existe
+            if (!File.Exists(filePath))
             {
-                Console.WriteLine("Usage: MiniPython <source file>");
+                Console.WriteLine($"Error: No se encontró el archivo {filePath}");
                 return;
             }
 
-            // Cargar el archivo fuente de Python Mini
-            string filePath = args[0];
-            string inputCode = System.IO.File.ReadAllText(filePath);
+            // Leer el contenido del archivo test.txt
+            string inputCode = File.ReadAllText(filePath);
 
             // Crear un lexer y parser
             var lexer = new MiniPythonLexer(new AntlrInputStream(inputCode));
             var tokens = new CommonTokenStream(lexer);
             var parser = new MiniPythonParser(tokens);
 
-            // Ejecutar la interpretación
-            var tree = parser.file_input(); // Asumiendo que `file_input` es la regla inicial
+            // Parsear el archivo usando la regla inicial
+            var tree = (ParserRuleContext)parser.program();
             Console.WriteLine("Parsing completed.");
+
+            // Imprimir el árbol de parseo (opcional, para depuración)
+            Console.WriteLine(tree.ToStringTree(parser));
         }
     }
 }
