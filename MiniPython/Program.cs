@@ -35,9 +35,6 @@ namespace MiniPython
             // Parsear el archivo usando la regla inicial
             var tree = (ParserRuleContext)parser.program();
             Console.WriteLine("Parsing completed.");
-
-            // Imprimir el árbol de parseo (opcional, para depuración)
-            Console.WriteLine(tree.ToStringTree(parser));
         }
     }
 }

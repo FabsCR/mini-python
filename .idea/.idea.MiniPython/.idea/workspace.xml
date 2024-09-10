@@ -8,31 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="949788e6-66da-4c63-86a8-bcb017822ad9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/MiniPython/Generated/MiniPythonLexer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/Generated/MiniPythonLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/Generated/MiniPythonLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/Generated/MiniPythonParser.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/Generated/MiniPythonParser.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/Generated/MiniPythonParser.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/Lexer/CustomErrorListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/Lexer/CustomErrorListener.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/MiniPython.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/MiniPython.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/Parser/MiniPythonParser.g4" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/Parser/MiniPythonParser.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MiniPython/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniPython/bin/Debug/net8.0/MiniPython.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/bin/Debug/net8.0/MiniPython.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniPython/bin/Debug/net8.0/MiniPython.exe" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/bin/Debug/net8.0/MiniPython.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniPython/bin/Debug/net8.0/MiniPython.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/bin/Debug/net8.0/MiniPython.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/MiniPython.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/MiniPython.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/MiniPython.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/MiniPython.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/MiniPython.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/ref/MiniPython.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/ref/MiniPython.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/refint/MiniPython.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/Debug/net8.0/refint/MiniPython.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MiniPython/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MiniPython/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniPython/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,36 +31,40 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2lrILwkOJkPu4oNWVmjg6lzz2ky" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.MiniPython.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.MiniPython.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\fabia\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\fabia\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\fabia\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\fabia\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\fabia\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\fabia\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="MiniPython" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -99,12 +93,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1725931717326</updated>
-      <workItem from="1725931718460" duration="4990000" />
+      <workItem from="1725931718460" duration="8143000" />
+      <workItem from="1725940135649" duration="1213000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
