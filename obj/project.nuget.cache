@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "S4yRtEio14U=",
+  "dgSpecHash": "9pL5YfZGo7M=",
   "success": true,
-  "projectFilePath": "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\MiniPython\\MiniPython.csproj",
+  "projectFilePath": "C:\\Users\\Justin Martínez\\Documentos\\Escritorio\\2do semestre 2024\\Compi\\proyecto\\mini-python-main\\MiniPython.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\kvnji\\.nuget\\packages\\antlr4.runtime.standard\\4.13.1\\antlr4.runtime.standard.4.13.1.nupkg.sha512"
+    "C:\\Users\\Justin Martínez\\.nuget\\packages\\antlr4.runtime.standard\\4.13.1\\antlr4.runtime.standard.4.13.1.nupkg.sha512"
   ],
   "logs": []
 }

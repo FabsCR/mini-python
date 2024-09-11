@@ -3,16 +3,23 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MiniPython"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Title="MiniPython" WindowState="Maximized" Background="#1e1e1e">
 
-    <DockPanel>
+    <Grid>
+        <!-- Definimos las filas para organizar la interfaz -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- Menú superior -->
+            <RowDefinition Height="*"/>    <!-- Editor de código y pestañas (se expandirá) -->
+            <RowDefinition Height="Auto"/> <!-- Botón para mostrar/ocultar consola -->
+            <RowDefinition Height="200"/>  <!-- Consola fija en la parte inferior -->
+            <RowDefinition Height="Auto"/> <!-- Fila extra para el botón en la parte inferior -->
+        </Grid.RowDefinitions>
 
-        <!-- Menú Superior -->
-        <Menu DockPanel.Dock="Top" Background="White" Foreground="#1e1e1e">
+        <!-- Menú superior -->
+        <Menu Grid.Row="0" Background="White" Foreground="#1e1e1e">
             <MenuItem Header="_File">
                 <MenuItem Header="Abrir archivo local" Click="OpenFile_Click" />
                 <MenuItem Header="Abrir desde Web" Click="OpenFromWeb_Click" />
@@ -20,61 +27,20 @@
             </MenuItem>
         </Menu>
 
-        <!-- Barra de pestañas con botón "+" y botón de ejecución -->
-        <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+        <!-- Panel principal con las pestañas de código y el botón de ejecución -->
+        <DockPanel Grid.Row="1">
             <TabControl x:Name="TabControl" Background="#2d2d2d" Foreground="White" BorderBrush="#2d2d2d">
-                
-                <!-- Pestaña por defecto -->
-                <TabItem Header="Sin Titulo.mnpy">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="40"/> <!-- Para los números de línea -->
-                            <ColumnDefinition Width="*"/> <!-- Para el editor de texto -->
-                        </Grid.ColumnDefinitions>
-
-                        <!-- ScrollViewer para los números de línea -->
-                        <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Grid.Column="0">
-                            <TextBlock x:Name="LineNumbers" 
-                                       FontFamily="Consolas" 
-                                       FontSize="14" 
-                                       Background="#252526" 
-                                       Foreground="Gray" 
-                                       VerticalAlignment="Stretch" 
-                                       Padding="5"
-                                       TextAlignment="Right" 
-                                       TextWrapping="WrapWithOverflow" />
-                        </ScrollViewer>
-
-                        <!-- Editor de Texto -->
-                        <TextBox x:Name="CodeEditor" 
-                                 Width="1820"
-                                 FontFamily="Consolas" 
-                                 FontSize="14" 
-                                 Background="#1e1e1e" 
-                                 Foreground="White" 
-                                 VerticalScrollBarVisibility="Auto" 
-                                 HorizontalScrollBarVisibility="Auto" 
-                                 AcceptsReturn="True" 
-                                 AcceptsTab="True" 
-                                 TextWrapping="Wrap"
-                                 Grid.Column="1"
-                                 Padding="5"
-                                 TextChanged="CodeEditor_TextChanged"/>
-                    </Grid>
-                </TabItem>
-
-                <!-- Botón para agregar nueva pestaña -->
                 <TabItem Header="+" IsEnabled="True" Background="#2d2d2d" Foreground="White" MouseUp="AddNewTab_Click"/>
             </TabControl>
-            
+
+            <!-- Botón para ejecutar el código -->
             <Button x:Name="RunButton"
                     Width="40"
-                    Margin="5"
                     Background="#2d2d2d"
                     Foreground="Green"
                     BorderBrush="#2d2d2d"
                     HorizontalAlignment="Right"
-                    VerticalAlignment="Center"
+                    VerticalAlignment="Top"
                     Click="RunCode_Click">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="▶" FontSize="16" FontWeight="Bold"/>
@@ -82,5 +48,29 @@
             </Button>
         </DockPanel>
 
-    </DockPanel>
+        <!-- Consola de resultados fija en la parte inferior -->
+        <Grid Grid.Row="3" x:Name="ConsolePanel" Background="#252526" Visibility="Collapsed">
+            <TextBox x:Name="ConsoleOutput"
+                     Background="#1e1e1e"
+                     Foreground="#ff0000"
+                     FontFamily="Consolas"
+                     FontSize="14"
+                     IsReadOnly="True"
+                     VerticalScrollBarVisibility="Auto"
+                     TextWrapping="Wrap"
+                     Padding="5"/>
+        </Grid>
+
+        <!-- Botón para mostrar/ocultar la consola (inicialmente en la parte inferior) -->
+        <Button x:Name="ToggleConsoleButton"
+                Grid.Row="4"
+                Content="▲"
+                Width="40"
+                Height="20"
+                Background="#2d2d2d"
+                Foreground="White"
+                HorizontalAlignment="Right"
+                Margin="5"
+                Click="ToggleConsoleVisibility"/>
+    </Grid>
 </Window>
