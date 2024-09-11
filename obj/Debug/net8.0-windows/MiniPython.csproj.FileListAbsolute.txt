@@ -91,3 +91,27 @@ C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto
 C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MiniPython.pdb
 C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MiniPython.genruntimeconfig.cache
 C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\ref\MiniPython.dll
+D:\projects\mini-python\bin\Debug\net8.0-windows\MiniPython.exe
+D:\projects\mini-python\bin\Debug\net8.0-windows\MiniPython.deps.json
+D:\projects\mini-python\bin\Debug\net8.0-windows\MiniPython.runtimeconfig.json
+D:\projects\mini-python\bin\Debug\net8.0-windows\MiniPython.dll
+D:\projects\mini-python\bin\Debug\net8.0-windows\MiniPython.pdb
+D:\projects\mini-python\bin\Debug\net8.0-windows\Antlr4.Runtime.Standard.dll
+D:\projects\mini-python\bin\Debug\net8.0-windows\HtmlAgilityPack.dll
+D:\projects\mini-python\obj\Debug\net8.0-windows\MiniPython.csproj.AssemblyReference.cache
+D:\projects\mini-python\obj\Debug\net8.0-windows\MainWindow.baml
+D:\projects\mini-python\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\projects\mini-python\obj\Debug\net8.0-windows\App.g.cs
+D:\projects\mini-python\obj\Debug\net8.0-windows\MiniPython_MarkupCompile.cache
+D:\projects\mini-python\obj\Debug\net8.0-windows\MiniPython.g.resources
+D:\projects\mini-python\obj\Debug\net8.0-windows\MiniPython.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\mini-python\obj\Debug\net8.0-windows\MiniPython.AssemblyInfoInputs.cache
+D:\projects\mini-python\obj\Debug\net8.0-windows\MiniPython.AssemblyInfo.cs
+D:\projects\mini-python\obj\Debug\net8.0-windows\MiniPython.csproj.CoreCompileInputs.cache
+D:\projects\mini-python\obj\Debug\net8.0-windows\MiniPython.sourcelink.json
+D:\projects\mini-python\obj\Debug\net8.0-windows\MiniPython.csproj.Up2Date
+D:\projects\mini-python\obj\Debug\net8.0-windows\MiniPython.dll
+D:\projects\mini-python\obj\Debug\net8.0-windows\refint\MiniPython.dll
+D:\projects\mini-python\obj\Debug\net8.0-windows\MiniPython.pdb
+D:\projects\mini-python\obj\Debug\net8.0-windows\MiniPython.genruntimeconfig.cache
+D:\projects\mini-python\obj\Debug\net8.0-windows\ref\MiniPython.dll

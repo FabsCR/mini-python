@@ -235,28 +235,75 @@ namespace MiniPython
         }
 
         private void SaveFile_Click(object sender, RoutedEventArgs e)
+{
+    // Obtener la pestaña seleccionada
+    TabItem selectedTab = TabControl.SelectedItem as TabItem;
+    if (selectedTab != null)
+    {
+        // Acceder al DockPanel que contiene el ScrollViewer y otros elementos
+        DockPanel dockPanel = selectedTab.Content as DockPanel;
+        if (dockPanel != null)
         {
-            TabItem selectedTab = TabControl.SelectedItem as TabItem;
-            if (selectedTab != null)
+            // Acceder al ScrollViewer dentro del DockPanel
+            ScrollViewer scrollViewer = dockPanel.Children.OfType<ScrollViewer>().FirstOrDefault();
+            if (scrollViewer != null)
             {
-                Grid grid = selectedTab.Content as Grid;
-                TextBox codeEditor = grid.Children[1] as TextBox;
-                string code = codeEditor.Text;
-
-                SaveFileDialog saveFileDialog = new SaveFileDialog
+                // Acceder al Grid que contiene el editor de código y los números de línea
+                Grid grid = scrollViewer.Content as Grid;
+                if (grid != null && grid.Children.Count > 1)
                 {
-                    Filter = "MiniPython Files (.mnpy)|*.mnpy"
-                };
+                    // Obtener el editor de código (RichTextBox) que se encuentra en la segunda columna del Grid
+                    RichTextBox codeEditor = grid.Children[1] as RichTextBox;
+                    if (codeEditor != null)
+                    {
+                        // Extraer el texto del RichTextBox
+                        string code = new TextRange(codeEditor.Document.ContentStart, codeEditor.Document.ContentEnd).Text;
 
-                if (saveFileDialog.ShowDialog() == true)
+                        // Crear el cuadro de diálogo para guardar el archivo
+                        SaveFileDialog saveFileDialog = new SaveFileDialog
+                        {
+                            Filter = "MiniPython Files (.mnpy)|*.mnpy"
+                        };
+
+                        // Si se confirma la acción de guardar
+                        if (saveFileDialog.ShowDialog() == true)
+                        {
+                            // Guardar el contenido en el archivo seleccionado
+                            File.WriteAllText(saveFileDialog.FileName, code);
+
+                            // Actualizar el header de la pestaña con el nuevo nombre del archivo
+                            if (selectedTab.Header is StackPanel header && header.Children[0] is TextBlock textBlock)
+                            {
+                                textBlock.Text = Path.GetFileName(saveFileDialog.FileName);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error: No se encontró el editor de texto en la pestaña.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+                else
                 {
-                    File.WriteAllText(saveFileDialog.FileName, code);
-                    // Actualizamos el header de la pestaña con el nuevo nombre del archivo
-                    StackPanel header = (StackPanel)selectedTab.Header;
-                    ((TextBlock)header.Children[0]).Text = Path.GetFileName(saveFileDialog.FileName);
+                    MessageBox.Show("Error: La estructura de la pestaña es incorrecta.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show("Error: No se encontró el ScrollViewer dentro de la pestaña.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
+        else
+        {
+            MessageBox.Show("Error: No se encontró el DockPanel dentro de la pestaña.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+    else
+    {
+        MessageBox.Show("Error: No hay una pestaña seleccionada.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+    }
+}
+
 
         private async void OpenFromWeb_Click(object sender, RoutedEventArgs e)
 {

@@ -102,19 +102,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Justin Martínez\\.nuget\\packages\\": {}
+    "C:\\Users\\fabia\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Justin Martínez\\Documentos\\Escritorio\\2do semestre 2024\\Compi\\proyecto\\mini-python\\MiniPython.csproj",
+      "projectUniqueName": "D:\\projects\\mini-python\\MiniPython.csproj",
       "projectName": "MiniPython",
-      "projectPath": "C:\\Users\\Justin Martínez\\Documentos\\Escritorio\\2do semestre 2024\\Compi\\proyecto\\mini-python\\MiniPython.csproj",
-      "packagesPath": "C:\\Users\\Justin Martínez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Justin Martínez\\Documentos\\Escritorio\\2do semestre 2024\\Compi\\proyecto\\mini-python\\obj\\",
+      "projectPath": "D:\\projects\\mini-python\\MiniPython.csproj",
+      "packagesPath": "C:\\Users\\fabia\\.nuget\\packages\\",
+      "outputPath": "D:\\projects\\mini-python\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Justin Martínez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fabia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -122,6 +122,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -134,11 +135,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -173,7 +169,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
