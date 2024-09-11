@@ -9,6 +9,7 @@ using System.Windows.Media;
 using MiniPython.Grammar; // Asegúrate de tener el namespace correcto
 using Antlr4.Runtime;
 using generated;
+using HtmlAgilityPack;
 
 namespace MiniPython
 {
@@ -20,8 +21,10 @@ namespace MiniPython
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
+            RunButton.IsEnabled = false;
+            this.KeyDown += MainWindow_KeyDown;
         }
-
+        
         private void CodeEditor_TextChanged(object sender, TextChangedEventArgs e)
         {
             UpdateLineNumbers();
@@ -88,90 +91,89 @@ namespace MiniPython
             TabControl.SelectedItem = newTab;
         }
 
-private TabItem CreateTab(string header, string content)
-{
-    TabItem newTab = new TabItem();
-    StackPanel tabHeader = new StackPanel { Orientation = Orientation.Horizontal };
-    TextBlock headerText = new TextBlock { Text = header };
-    Button closeButton = new Button { Content = "X", Width = 16, Height = 16, Visibility = Visibility.Hidden };
-    closeButton.Click += (s, ev) => CloseTab(newTab);
-    tabHeader.Children.Add(headerText);
-    tabHeader.Children.Add(closeButton);
-    newTab.Header = tabHeader;
-
-    // Hover event to show/hide close button
-    newTab.MouseEnter += (s, ev) => closeButton.Visibility = Visibility.Visible;
-    newTab.MouseLeave += (s, ev) => closeButton.Visibility = Visibility.Hidden;
-
-    Grid grid = new Grid();
-    grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(40) });
-    grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1000) });
-
-    // ScrollViewer for line numbers
-    ScrollViewer lineNumberScrollViewer = new ScrollViewer
-    {
-        VerticalScrollBarVisibility = ScrollBarVisibility.Hidden,
-        HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled
-    };
-
-    TextBlock lineNumbers = new TextBlock
-    {
-        FontFamily = new FontFamily("Consolas"),
-        FontSize = 14,
-        Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#252526")),
-        Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("Gray")),
-        VerticalAlignment = VerticalAlignment.Stretch,
-        Padding = new Thickness(5),
-        TextAlignment = TextAlignment.Right
-    };
-    lineNumberScrollViewer.Content = lineNumbers;
-    grid.Children.Add(lineNumberScrollViewer);
-    Grid.SetColumn(lineNumberScrollViewer, 0);
-
-    TextBox codeEditor = new TextBox
-    {
-        FontFamily = new FontFamily("Consolas"),
-        FontSize = 14,
-        Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1e1e1e")),
-        Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("White")),
-        VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
-        HorizontalScrollBarVisibility = ScrollBarVisibility.Auto,
-        AcceptsReturn = true,
-        AcceptsTab = true,
-        TextWrapping = TextWrapping.Wrap,
-        Text = content
-    };
-    codeEditor.TextChanged += CodeEditor_TextChanged;
-    grid.Children.Add(codeEditor);
-    Grid.SetColumn(codeEditor, 1);
-
-    var codeScrollViewer = GetScrollViewer(codeEditor);
-    
-    // Sincronizar los scrolls en ambas direcciones
-    if (codeScrollViewer != null)
-    {
-        codeScrollViewer.ScrollChanged += (s, ev) =>
+        private TabItem CreateTab(string header, string content)
         {
-            if (ev.VerticalChange != 0)
+            TabItem newTab = new TabItem();
+            StackPanel tabHeader = new StackPanel { Orientation = Orientation.Horizontal };
+            TextBlock headerText = new TextBlock { Text = header };
+            Button closeButton = new Button { Content = "X", Width = 16, Height = 16, Visibility = Visibility.Hidden };
+            closeButton.Click += (s, ev) => CloseTab(newTab);
+            tabHeader.Children.Add(headerText);
+            tabHeader.Children.Add(closeButton);
+            newTab.Header = tabHeader;
+
+            // Hover event to show/hide close button
+            newTab.MouseEnter += (s, ev) => closeButton.Visibility = Visibility.Visible;
+            newTab.MouseLeave += (s, ev) => closeButton.Visibility = Visibility.Hidden;
+
+            Grid grid = new Grid();
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(40) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1000) });
+
+            // ScrollViewer for line numbers
+            ScrollViewer lineNumberScrollViewer = new ScrollViewer
             {
-                lineNumberScrollViewer.ScrollToVerticalOffset(codeScrollViewer.VerticalOffset);
-            }
-        };
+                VerticalScrollBarVisibility = ScrollBarVisibility.Hidden,
+                HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled
+            };
 
-        lineNumberScrollViewer.ScrollChanged += (s, ev) =>
-        {
-            if (ev.VerticalChange != 0)
+            TextBlock lineNumbers = new TextBlock
             {
-                codeScrollViewer.ScrollToVerticalOffset(lineNumberScrollViewer.VerticalOffset);
+                FontFamily = new FontFamily("Consolas"),
+                FontSize = 14,
+                Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#252526")),
+                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("Gray")),
+                VerticalAlignment = VerticalAlignment.Stretch,
+                Padding = new Thickness(5),
+                TextAlignment = TextAlignment.Right
+            };
+            lineNumberScrollViewer.Content = lineNumbers;
+            grid.Children.Add(lineNumberScrollViewer);
+            Grid.SetColumn(lineNumberScrollViewer, 0);
+
+            TextBox codeEditor = new TextBox
+            {
+                FontFamily = new FontFamily("Consolas"),
+                FontSize = 14,
+                Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1e1e1e")),
+                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("White")),
+                VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
+                HorizontalScrollBarVisibility = ScrollBarVisibility.Auto,
+                AcceptsReturn = true,
+                AcceptsTab = true,
+                TextWrapping = TextWrapping.Wrap,
+                Text = content
+            };
+            codeEditor.TextChanged += CodeEditor_TextChanged;
+            grid.Children.Add(codeEditor);
+            Grid.SetColumn(codeEditor, 1);
+
+            var codeScrollViewer = GetScrollViewer(codeEditor);
+            
+            // Sincronizar los scrolls en ambas direcciones
+            if (codeScrollViewer != null)
+            {
+                codeScrollViewer.ScrollChanged += (s, ev) =>
+                {
+                    if (ev.VerticalChange != 0)
+                    {
+                        lineNumberScrollViewer.ScrollToVerticalOffset(codeScrollViewer.VerticalOffset);
+                    }
+                };
+
+                lineNumberScrollViewer.ScrollChanged += (s, ev) =>
+                {
+                    if (ev.VerticalChange != 0)
+                    {
+                        codeScrollViewer.ScrollToVerticalOffset(lineNumberScrollViewer.VerticalOffset);
+                    }
+                };
             }
-        };
-    }
 
-    newTab.Content = grid;
-    return newTab;
-}
-
-
+            newTab.Content = grid;
+            return newTab;
+        }
+        
         private void CloseTab(TabItem tab)
         {
             MessageBoxResult result = MessageBox.Show("¿Desea guardar los cambios antes de cerrar?", "Guardar",
@@ -205,6 +207,7 @@ private TabItem CreateTab(string header, string content)
                 TabItem newTab = CreateTab(Path.GetFileName(openFileDialog.FileName), fileContent);
                 TabControl.Items.Insert(TabControl.Items.Count - 1, newTab);
                 TabControl.SelectedItem = newTab;
+                RunButton.IsEnabled = true;
             }
         }
 
@@ -234,27 +237,125 @@ private TabItem CreateTab(string header, string content)
 
         private async void OpenFromWeb_Click(object sender, RoutedEventArgs e)
         {
-            string url = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el enlace directo del archivo:", "Abrir desde Web", "");
+            // Ventana emergente compacta para ingresar la URL
+            string url = Microsoft.VisualBasic.Interaction.InputBox(
+                "Ingrese el enlace directo del archivo (.mnpy):", 
+                "Abrir desde Web", 
+                "", 
+                -1, -1 // Centrar ventana de entrada
+            );
+
+            if (string.IsNullOrWhiteSpace(url))
+            {
+                MessageBox.Show("Debe ingresar una URL válida.");
+                return;
+            }
+
+            // Verificar que la URL termine con .mnpy
             if (url.EndsWith(".mnpy"))
             {
                 try
                 {
                     using (HttpClient client = new HttpClient())
                     {
-                        string fileContent = await client.GetStringAsync(url);
-                        AddTabWithContent("ArchivoWeb.mnpy", fileContent);
+                        // Si la URL es de GitHub, cambiar a la versión "raw"
+                        if (url.Contains("github.com"))
+                        {
+                            url = url.Replace("github.com", "raw.githubusercontent.com")
+                                     .Replace("/blob/", "/");
+
+                            var response = await client.GetAsync(url);
+
+                            if (response.IsSuccessStatusCode)
+                            {
+                                // Descargar el archivo como texto crudo
+                                string fileContent = await response.Content.ReadAsStringAsync();
+
+                                // Obtener el nombre del archivo desde la URL
+                                string fileName = System.IO.Path.GetFileName(url);
+
+                                // Nombrar la pestaña como (web)nombreDelArchivo
+                                AddTabWithContent($"(web){fileName}", fileContent);
+                                RunButton.IsEnabled = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show($"Error al descargar el archivo: {response.ReasonPhrase}");
+                            }
+                        }
+                        else
+                        {
+                            // Manejar URLs que no son de GitHub con HtmlAgilityPack
+                            var response = await client.GetAsync(url);
+
+                            if (response.IsSuccessStatusCode)
+                            {
+                                // Descargar el contenido como cadena (HTML)
+                                string htmlContent = await response.Content.ReadAsStringAsync();
+
+                                // Cargar el HTML en HtmlAgilityPack
+                                var htmlDoc = new HtmlAgilityPack.HtmlDocument();
+                                htmlDoc.LoadHtml(htmlContent);
+
+                                // Usar múltiples rutas XPath para intentar encontrar el contenido del archivo
+                                var possibleNodes = new[] {
+                                    "//pre",                    // <pre> tag (común para texto crudo)
+                                    "//code",                   // <code> tag (a veces se usa para bloques de código)
+                                    "//textarea",               // <textarea> tag (datos en formularios)
+                                    "//script[@type='text/plain']", // <script type="text/plain">, a veces usado para texto
+                                    "//div[contains(@class, 'file-content')]" // <div> con clase indicando contenido de archivo
+                                };
+
+                                HtmlNode fileNode = null;
+
+                                // Intentar cada XPath hasta encontrar un nodo con contenido
+                                foreach (var xpath in possibleNodes)
+                                {
+                                    fileNode = htmlDoc.DocumentNode.SelectSingleNode(xpath);
+                                    if (fileNode != null && !string.IsNullOrWhiteSpace(fileNode.InnerText))
+                                    {
+                                        break;
+                                    }
+                                }
+
+                                if (fileNode != null)
+                                {
+                                    string fileContent = fileNode.InnerText;
+
+                                    // Obtener el nombre del archivo desde la URL
+                                    string fileName = System.IO.Path.GetFileName(url);
+
+                                    // Nombrar la pestaña como (web)nombreDelArchivo
+                                    AddTabWithContent($"(web){fileName}", fileContent);
+                                    RunButton.IsEnabled = true;
+                                }
+                                else
+                                {
+                                    // Mostrar mensaje si no se encontró el contenido del archivo
+                                    MessageBox.Show("No se pudo encontrar el contenido del archivo en la página HTML.");
+                                }
+                            }
+                            else
+                            {
+                                // Mensaje de error si la descarga falla
+                                MessageBox.Show($"Error al descargar el archivo: {response.ReasonPhrase}");
+                            }
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
+                    // Manejar errores
                     MessageBox.Show("Error al descargar el archivo: " + ex.Message);
                 }
             }
             else
             {
+                // Mostrar mensaje si la URL no termina en .mnpy
                 MessageBox.Show("El enlace debe terminar en .mnpy.");
             }
         }
+
 
         private void RunCode_Click(object sender, RoutedEventArgs e)
         {
@@ -332,6 +433,28 @@ private TabItem CreateTab(string header, string content)
 
                 // Mover el botón justo encima de la consola
                 Grid.SetRow(ToggleConsoleButton, 2);
+            }
+        }
+        
+        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl))
+            {
+                if (e.Key == Key.O)
+                {
+                    if (Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))
+                    {
+                        // Abrir desde la web (Ctrl + Shift + O)
+                        OpenFromWeb_Click(null, null);
+                    }
+                    else
+                    {
+                        // Abrir archivo local (Ctrl + O)
+                        OpenFile_Click(null, null);
+                    }
+
+                    e.Handled = true; // Previene otros eventos
+                }
             }
         }
 

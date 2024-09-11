@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:/Users/Justin Martínez/Documentos/Escritorio/2do semestre 2024/Compi/proyecto/mini-python-main/Grammar/MiniPythonLexer.g4 by ANTLR 4.13.1
+// Generated from D:/Master/TEC/2024 Semestre II/Compiladores e Interpretes/Proyectos/mini-python/Grammar/MiniPythonLexer.g4 by ANTLR 4.13.1
 
 // Unreachable code detected
 #pragma warning disable 0162

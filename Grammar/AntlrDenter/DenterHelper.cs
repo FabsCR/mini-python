@@ -155,24 +155,23 @@ namespace AntlrDenter
 
             public IToken Apply(IToken t)
             {
-                // Forzamos un NEWLINE antes de procesar el EOF para asegurar DEDENT
-                _helper._dentsBuffer.Enqueue(_helper.CreateToken(_helper._nlToken, t));
-                
-                IToken r;
-                if (_helper._indentations.Count == 0)
+                // Force a NEWLINE before processing the EOF to ensure DEDENTs
+                if (_helper._dentsBuffer.Count == 0)
                 {
-                    r = _helper.CreateToken(_helper._nlToken, t);
-                    _helper._dentsBuffer.Enqueue(t);
+                    _helper._dentsBuffer.Enqueue(_helper.CreateToken(_helper._nlToken, t));
                 }
-                else
+    
+                // Unwind all indentations until we are back at 0
+                while (_helper._indentations.First.Value > 0)
                 {
-                    r = _helper.UnwindTo(0, t);  // Forzar dedent hasta nivel 0
-                    _helper._dentsBuffer.Enqueue(t);
+                    _helper._dentsBuffer.Enqueue(_helper.CreateToken(_helper._dedentToken, t));
+                    _helper._indentations.RemoveFirst();
                 }
 
                 _helper._reachedEof = true;
-                return r;
+                return t;  // Return the EOF token after processing all dedents
             }
+
         }
 
         private interface IEofHandler
