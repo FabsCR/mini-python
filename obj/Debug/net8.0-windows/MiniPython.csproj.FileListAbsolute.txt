@@ -67,3 +67,27 @@ D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\
 D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\obj\Debug\net8.0-windows\MiniPython.genruntimeconfig.cache
 D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\obj\Debug\net8.0-windows\ref\MiniPython.dll
 D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\bin\Debug\net8.0-windows\HtmlAgilityPack.dll
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\bin\Debug\net8.0-windows\MiniPython.exe
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\bin\Debug\net8.0-windows\MiniPython.deps.json
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\bin\Debug\net8.0-windows\MiniPython.runtimeconfig.json
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\bin\Debug\net8.0-windows\MiniPython.dll
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\bin\Debug\net8.0-windows\MiniPython.pdb
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\bin\Debug\net8.0-windows\Antlr4.Runtime.Standard.dll
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\bin\Debug\net8.0-windows\HtmlAgilityPack.dll
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MiniPython.csproj.AssemblyReference.cache
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MiniPython_MarkupCompile.cache
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MiniPython.g.resources
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MiniPython.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MiniPython.AssemblyInfoInputs.cache
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MiniPython.AssemblyInfo.cs
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MiniPython.csproj.CoreCompileInputs.cache
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MiniPython.sourcelink.json
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MiniPython.csproj.Up2Date
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MiniPython.dll
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\refint\MiniPython.dll
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MiniPython.pdb
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\MiniPython.genruntimeconfig.cache
+C:\Users\Justin Martínez\Documentos\Escritorio\2do semestre 2024\Compi\proyecto\mini-python\obj\Debug\net8.0-windows\ref\MiniPython.dll

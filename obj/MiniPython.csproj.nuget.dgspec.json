@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\mini-python\\MiniPython.csproj": {}
+    "C:\\Users\\Justin Martínez\\Documentos\\Escritorio\\2do semestre 2024\\Compi\\proyecto\\mini-python\\MiniPython.csproj": {}
   },
   "projects": {
-    "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\mini-python\\MiniPython.csproj": {
+    "C:\\Users\\Justin Martínez\\Documentos\\Escritorio\\2do semestre 2024\\Compi\\proyecto\\mini-python\\MiniPython.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\mini-python\\MiniPython.csproj",
+        "projectUniqueName": "C:\\Users\\Justin Martínez\\Documentos\\Escritorio\\2do semestre 2024\\Compi\\proyecto\\mini-python\\MiniPython.csproj",
         "projectName": "MiniPython",
-        "projectPath": "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\mini-python\\MiniPython.csproj",
-        "packagesPath": "C:\\Users\\kvnji\\.nuget\\packages\\",
-        "outputPath": "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\mini-python\\obj\\",
+        "projectPath": "C:\\Users\\Justin Martínez\\Documentos\\Escritorio\\2do semestre 2024\\Compi\\proyecto\\mini-python\\MiniPython.csproj",
+        "packagesPath": "C:\\Users\\Justin Martínez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Justin Martínez\\Documentos\\Escritorio\\2do semestre 2024\\Compi\\proyecto\\mini-python\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kvnji\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Justin Martínez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0-windows"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -71,7 +73,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\kvnji\\.dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

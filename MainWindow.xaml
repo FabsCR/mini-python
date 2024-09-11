@@ -9,7 +9,6 @@
         Title="MiniPython" WindowState="Maximized" Background="#1e1e1e">
 
     <Grid>
-        <!-- Definimos las filas para organizar la interfaz -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/> <!-- Menú superior -->
             <RowDefinition Height="*"/>    <!-- Editor de código y pestañas (se expandirá) -->
@@ -27,41 +26,24 @@
             </MenuItem>
         </Menu>
 
-        <!-- Panel principal con las pestañas de código y el botón de ejecución -->
-        <DockPanel Grid.Row="1">
-            <TabControl x:Name="TabControl" Background="#2d2d2d" Foreground="White" BorderBrush="#2d2d2d">
-                <TabItem Header="+" IsEnabled="True" Background="#2d2d2d" Foreground="White" MouseUp="AddNewTab_Click"/>
-            </TabControl>
-
-            <!-- Botón para ejecutar el código -->
-            <Button x:Name="RunButton"
-                    Width="40"
-                    Background="#2d2d2d"
-                    Foreground="Green"
-                    BorderBrush="#2d2d2d"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Top"
-                    Click="RunCode_Click">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="▶" FontSize="16" FontWeight="Bold"/>
-                </StackPanel>
-            </Button>
-        </DockPanel>
+        <!-- Panel principal con las pestañas de código -->
+        <TabControl x:Name="TabControl" Grid.Row="1" Background="#2d2d2d" Foreground="White" BorderBrush="#2d2d2d">
+            <TabItem Header="+" IsEnabled="True" Background="#2d2d2d" Foreground="White" MouseUp="AddNewTab_Click"/>
+        </TabControl>
 
         <!-- Consola de resultados fija en la parte inferior -->
         <Grid Grid.Row="3" x:Name="ConsolePanel" Background="#252526" Visibility="Collapsed">
-            <TextBox x:Name="ConsoleOutput"
+            <RichTextBox x:Name="ConsoleOutput"
                      Background="#1e1e1e"
                      Foreground="#ff0000"
                      FontFamily="Consolas"
                      FontSize="14"
                      IsReadOnly="True"
                      VerticalScrollBarVisibility="Auto"
-                     TextWrapping="Wrap"
                      Padding="5"/>
         </Grid>
 
-        <!-- Botón para mostrar/ocultar la consola (inicialmente en la parte inferior) -->
+        <!-- Botón para mostrar/ocultar la consola -->
         <Button x:Name="ToggleConsoleButton"
                 Grid.Row="4"
                 Content="▲"

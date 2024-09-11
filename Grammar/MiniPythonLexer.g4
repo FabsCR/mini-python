@@ -23,7 +23,9 @@ public override IToken NextToken()
     return denter.NextToken();
 }
 }
-
+//Esta es la regla para las secuencias de escape como \b, \t, \n, \f, \r, ", \ 
+fragment ESC_SEQ: '\\' [btnfr"\\];
+    
 // El token de nueva línea debe ser visible para DenterHelper
 NEWLINE: ('\r'? '\n' ' '*);
 
@@ -65,6 +67,6 @@ DOSPUN:         ':';
 
 INT:            [0-9]+;
 FLOAT:          [0-9]+ '.' [0-9]+;
-CHARCONST:      '\'' . '\'';
+CHARCONST:      '\'' (ESC_SEQ | .) '\'';
 STRING:         '"' .*? '"';
 ID:             [a-zA-Z_][a-zA-Z_0-9]*;

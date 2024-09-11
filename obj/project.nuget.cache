@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "AN4X5W/+SUo=",
+  "dgSpecHash": "KVpPpSo0dmg=",
   "success": true,
-  "projectFilePath": "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\mini-python\\MiniPython.csproj",
+  "projectFilePath": "C:\\Users\\Justin Martínez\\Documentos\\Escritorio\\2do semestre 2024\\Compi\\proyecto\\mini-python\\MiniPython.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\kvnji\\.nuget\\packages\\antlr4.runtime.standard\\4.13.1\\antlr4.runtime.standard.4.13.1.nupkg.sha512",
-    "C:\\Users\\kvnji\\.nuget\\packages\\htmlagilitypack\\1.11.65\\htmlagilitypack.1.11.65.nupkg.sha512"
+    "C:\\Users\\Justin Martínez\\.nuget\\packages\\antlr4.runtime.standard\\4.13.1\\antlr4.runtime.standard.4.13.1.nupkg.sha512",
+    "C:\\Users\\Justin Martínez\\.nuget\\packages\\htmlagilitypack\\1.11.65\\htmlagilitypack.1.11.65.nupkg.sha512"
   ],
   "logs": []
 }
