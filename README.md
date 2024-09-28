@@ -7,7 +7,7 @@ El proyecto incluye una interfaz gráfica que permite a los usuarios escribir, e
 
 ## 🔧 Características
 
-- **📝 Editor de código**: Con soporte para apertura y guardado de archivos `.minipy`.
+- **📝 Editor de código**: Con soporte para apertura y guardado de archivos `.mnpy`.
 - **⚙️ Análisis léxico**: Soporta comentarios, constantes numéricas y operadores.
 - **🧩 Análisis sintáctico**: Basado en una gramática **BNF** con **ANTLR4**.
 - **🌳 Árbol de Sintaxis Abstracta (AST)**: Generación de AST durante la compilación.
@@ -27,7 +27,7 @@ El proyecto incluye una interfaz gráfica que permite a los usuarios escribir, e
 ## 🚀 Uso
 
 1. Abre el editor MiniPython desde la interfaz gráfica.
-2. Carga o crea un archivo `.minipy`.
+2. Carga o crea un archivo `.mnpy`.
 3. Utiliza los botones para **guardar** o **ejecutar** el código.
 4. Los errores sintácticos se mostrarán en la interfaz, y podrás hacer clic en ellos para navegar a la línea correspondiente.
 
@@ -36,3 +36,9 @@ El proyecto incluye una interfaz gráfica que permite a los usuarios escribir, e
 - **JetBrains Rider** (IDE recomendado)
 - **.NET Core SDK**
 - **ANTLR4** (para el análisis léxico y sintáctico)
+
+## 📚 Documentación
+
+Puedes encontrar la documentación detallada del proyecto en el siguiente enlace:
+
+[Documentación MiniPython - Entrega 1](https://github.com/FabsCR/mini-python/blob/main/DocumentacionEntrega1_Compiladores_FabianKevinJustin.pdf)
