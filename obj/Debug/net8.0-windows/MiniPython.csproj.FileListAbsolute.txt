@@ -115,3 +115,4 @@ D:\projects\mini-python\obj\Debug\net8.0-windows\refint\MiniPython.dll
 D:\projects\mini-python\obj\Debug\net8.0-windows\MiniPython.pdb
 D:\projects\mini-python\obj\Debug\net8.0-windows\MiniPython.genruntimeconfig.cache
 D:\projects\mini-python\obj\Debug\net8.0-windows\ref\MiniPython.dll
+D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\bin\Debug\net8.0-windows\Deque.dll

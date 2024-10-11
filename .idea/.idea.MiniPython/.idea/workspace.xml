@@ -8,19 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f9d092d-6ab4-49be-9163-2b20ddf3b561" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grammar/generated/MiniPythonLexer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grammar/generated/MiniPythonLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grammar/generated/MiniPythonLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grammar/generated/MiniPythonParser.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grammar/generated/MiniPythonParser.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grammar/generated/MiniPythonParser.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grammar/AntlrDenter/DenterHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Grammar/AntlrDenter/DenterHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniPython.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MiniPython.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/App.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MainWindow.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
@@ -67,29 +64,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.MiniPython.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\fabia\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\fabia\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\fabia\\AppData\\Local\\Symbols\\src"
-    ]
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.MiniPython.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="MiniPython" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -125,6 +116,8 @@
       <workItem from="1726032041595" duration="5609000" />
       <workItem from="1726082745296" duration="6574000" />
       <workItem from="1726090436398" duration="7185000" />
+      <workItem from="1728681873794" duration="417000" />
+      <workItem from="1728682317915" duration="5772000" />
     </task>
     <servers />
   </component>
@@ -133,6 +126,7 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>

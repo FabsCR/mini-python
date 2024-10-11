@@ -15,6 +15,19 @@
           }
         }
       },
+      "Deque/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Net20/Deque.dll": {
+            "related": ".XML"
+          }
+        },
+        "runtime": {
+          "lib/Net20/Deque.dll": {
+            "related": ".XML"
+          }
+        }
+      },
       "HtmlAgilityPack/1.11.65": {
         "type": "package",
         "compile": {
@@ -44,6 +57,19 @@
         "lib/net45/Antlr4.Runtime.Standard.xml",
         "lib/netstandard2.0/Antlr4.Runtime.Standard.dll",
         "lib/netstandard2.0/Antlr4.Runtime.Standard.xml"
+      ]
+    },
+    "Deque/1.0.1": {
+      "sha512": "YnP8n1kebGka6l19TeQK994QH+9ukwo1kzSpQ/ROyP3cqEszPvCpOFmVOFPolWiwZi3Ir7wX/p2b/Q32QOLiBQ==",
+      "type": "package",
+      "path": "deque/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "deque.1.0.1.nupkg.sha512",
+        "deque.nuspec",
+        "lib/Net20/Deque.XML",
+        "lib/Net20/Deque.dll"
       ]
     },
     "HtmlAgilityPack/1.11.65": {
@@ -98,31 +124,29 @@
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
       "Antlr4.Runtime.Standard >= 4.13.1",
+      "Deque >= 1.0.1",
       "HtmlAgilityPack >= 1.11.65"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fabia\\.nuget\\packages\\": {}
+    "C:\\Users\\kvnji\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\mini-python\\MiniPython.csproj",
+      "projectUniqueName": "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\mini-python\\MiniPython.csproj",
       "projectName": "MiniPython",
-      "projectPath": "D:\\projects\\mini-python\\MiniPython.csproj",
-      "packagesPath": "C:\\Users\\fabia\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\mini-python\\obj\\",
+      "projectPath": "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\mini-python\\MiniPython.csproj",
+      "packagesPath": "C:\\Users\\kvnji\\.nuget\\packages\\",
+      "outputPath": "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\mini-python\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fabia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\kvnji\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0-windows"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -135,6 +159,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -144,6 +173,10 @@
           "Antlr4.Runtime.Standard": {
             "target": "Package",
             "version": "[4.13.1, )"
+          },
+          "Deque": {
+            "target": "Package",
+            "version": "[1.0.1, )"
           },
           "HtmlAgilityPack": {
             "target": "Package",
@@ -169,8 +202,20 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\kvnji\\.dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Deque 1.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Deque",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
 }

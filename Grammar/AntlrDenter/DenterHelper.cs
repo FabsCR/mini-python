@@ -8,7 +8,7 @@ namespace AntlrDenter
     {
         private readonly int _dedentToken;
         private readonly Queue<IToken> _dentsBuffer = new Queue<IToken>();
-        private readonly LinkedList<int> _indentations = new LinkedList<int>();
+        private readonly Deque<int> _indentations = new Deque<int>();
         private readonly int _indentToken;
         private readonly int _nlToken;
         private IEofHandler _eofHandler;
@@ -50,54 +50,59 @@ namespace AntlrDenter
         {
             if (_indentations.Count == 0)
             {
-                _indentations.AddFirst(0); // Inicializamos con indentación 0
+                _indentations.AddFront(0);
+                // First invocation. Look for the first non-NL. Enqueue it, and possibly an indentation if that non-NL
+                // token doesn't start at char 0.
                 IToken firstRealToken;
                 do
                 {
                     firstRealToken = PullToken();
                 } while (firstRealToken.Type == _nlToken);
 
-                // No ignoramos NEWLINE pero aseguramos que haya token relevante.
                 if (firstRealToken.Column > 0)
                 {
-                    _indentations.AddFirst(firstRealToken.Column);
+                    _indentations.AddFront(firstRealToken.Column);
                     _dentsBuffer.Enqueue(CreateToken(_indentToken, firstRealToken));
                 }
 
-                _dentsBuffer.Enqueue(firstRealToken); // Encolamos el primer token real
+                _dentsBuffer.Enqueue(firstRealToken);
             }
         }
 
         private IToken HandleNewlineToken(IToken t)
         {
+            // fast-forward to the next non-NL
             IToken nextNext = PullToken();
             while (nextNext.Type == _nlToken)
             {
                 t = nextNext;
-                nextNext = PullToken(); // Avanzamos al próximo token
+                nextNext = PullToken();
             }
 
             if (nextNext.Type == -1) return _eofHandler.Apply(nextNext);
+            // nextNext is now a non-NL token; we'll queue it up after any possible dents
 
-            // Usamos el valor de columna del próximo token en lugar de la longitud del texto
-            int indent = nextNext.Column;
-            int prevIndent = _indentations.First.Value;
+            string nlText = t.Text;
+            int indent = nlText.Length - 1; // every NL has one \n char, so shorten the length to account for it
+            if (indent > 0 && nlText[0] == '\r')
+                --indent; // If the NL also has a \r char, we should account for that as well
+            int prevIndent = _indentations.Get(0);
             IToken r;
             if (indent == prevIndent)
             {
-                r = t;
+                r = t; // just a newline
             }
             else if (indent > prevIndent)
             {
                 r = CreateToken(_indentToken, t);
-                _indentations.AddFirst(indent);
+                _indentations.AddFront(indent);
             }
             else
             {
                 r = UnwindTo(indent, t);
             }
 
-            _dentsBuffer.Enqueue(nextNext); // Encolamos el token siguiente
+            _dentsBuffer.Enqueue(nextNext);
             return r;
         }
 
@@ -117,17 +122,33 @@ namespace AntlrDenter
             return r;
         }
 
+        /**
+         * Returns a DEDENT token, and also queues up additional DEDENTS as necessary.
+         * @param targetIndent the "size" of the indentation (number of spaces) by the end
+         * @param copyFrom the triggering token
+         * @return a DEDENT token
+         */
         private IToken UnwindTo(int targetIndent, IToken copyFrom)
         {
+            //assert _dentsBuffer.isEmpty() : _dentsBuffer;
             _dentsBuffer.Enqueue(CreateToken(_nlToken, copyFrom));
+            // To make things easier, we'll queue up ALL of the dedents, and then pop off the first one.
+            // For example, here's how some text is analyzed:
+            //
+            //  Text          :  Indentation  :  Action         : Indents Deque
+            //  [ baseline ]  :  0            :  nothing        : [0]
+            //  [   foo    ]  :  2            :  INDENT         : [0, 2]
+            //  [    bar   ]  :  3            :  INDENT         : [0, 2, 3]
+            //  [ baz      ]  :  0            :  DEDENT x2      : [0]
+
             while (true)
             {
-                int prevIndent = _indentations.First.Value;
-                _indentations.RemoveFirst();
+                int prevIndent = _indentations.RemoveFront();
                 if (prevIndent == targetIndent) break;
                 if (targetIndent > prevIndent)
                 {
-                    _indentations.AddFirst(prevIndent);
+                    // "weird" condition above
+                    _indentations.AddFront(prevIndent); // restore previous indentation, since we've indented from it
                     _dentsBuffer.Enqueue(CreateToken(_indentToken, copyFrom));
                     break;
                 }
@@ -135,7 +156,7 @@ namespace AntlrDenter
                 _dentsBuffer.Enqueue(CreateToken(_dedentToken, copyFrom));
             }
 
-            _indentations.AddFirst(targetIndent);
+            _indentations.AddFront(targetIndent);
             return _dentsBuffer.Dequeue();
         }
 
@@ -155,23 +176,23 @@ namespace AntlrDenter
 
             public IToken Apply(IToken t)
             {
-                // Force a NEWLINE before processing the EOF to ensure DEDENTs
-                if (_helper._dentsBuffer.Count == 0)
+                IToken r;
+                // when we reach EOF, unwind all indentations. If there aren't any, insert a NL. This lets the grammar treat
+                // un-indented expressions as just being NL-terminated, rather than NL|EOF.
+                if (_helper._indentations.Count == 0)
                 {
-                    _helper._dentsBuffer.Enqueue(_helper.CreateToken(_helper._nlToken, t));
+                    r = _helper.CreateToken(_helper._nlToken, t);
+                    _helper._dentsBuffer.Enqueue(t);
                 }
-    
-                // Unwind all indentations until we are back at 0
-                while (_helper._indentations.First.Value > 0)
+                else
                 {
-                    _helper._dentsBuffer.Enqueue(_helper.CreateToken(_helper._dedentToken, t));
-                    _helper._indentations.RemoveFirst();
+                    r = _helper.UnwindTo(0, t);
+                    _helper._dentsBuffer.Enqueue(t);
                 }
 
                 _helper._reachedEof = true;
-                return t;  // Return the EOF token after processing all dedents
+                return r;
             }
-
         }
 
         private interface IEofHandler
@@ -219,10 +240,10 @@ namespace AntlrDenter
                 _type = type;
             }
 
-            public override string Text
+            public string GetText()
             {
-                get => _type ?? base.Text;
-                set => base.Text = value;
+                if (_type != null) Text = _type;
+                return Text;
             }
         }
 
@@ -279,8 +300,8 @@ namespace AntlrDenter
             {
                 private readonly Func<IToken> _puller;
 
-                public DenterHelperImpl(int nlToken, int indentToken, int dedentToken, Func<IToken> puller) 
-                    : base(nlToken, indentToken, dedentToken)
+                public DenterHelperImpl(int nlToken, int indentToken, int dedentToken, Func<IToken> puller) : base(
+                    nlToken, indentToken, dedentToken)
                 {
                     _puller = puller;
                 }
