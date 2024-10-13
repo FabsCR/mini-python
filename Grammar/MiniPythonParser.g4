@@ -32,10 +32,10 @@ additionExpression: multiplicationExpression ((PLUS | MINUS) multiplicationExpre
 multiplicationExpression: elementExpression ((MULT | DIV) elementExpression)*;
 elementExpression: primitiveExpression (LBRACKET expression RBRACKET)?;
 expressionList: (expression (COMMA expression)*)?;
-primitiveExpression : LPAREN expression RPAREN
-                    | LEN LPAREN expression RPAREN
-                    | listExpression
-                    | (PLUS | MINUS)? (INT | FLOAT | CHARCONST | STRING)
-                    | ID (LPAREN expressionList RPAREN)?
+primitiveExpression : LPAREN expression RPAREN                                                                          #primitiveExpressionParenExprAST
+                    | LEN LPAREN expression RPAREN                                                                      #primitiveExpressionLenAST
+                    | listExpression                                                                                    #primitiveExpressionListExprAST  
+                    | (PLUS | MINUS)? (INT | FLOAT | CHARCONST | STRING)                                                #primitiveExpressionLiteralAST
+                    | ID (LPAREN expressionList RPAREN)?                                                                #primitiveExpressionExprListAST
                     ;
 listExpression: LBRACKET expressionList RBRACKET;

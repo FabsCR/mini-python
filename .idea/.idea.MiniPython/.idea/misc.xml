@@ -9,7 +9,7 @@
           <option name="outputDir" value="D:\projects\mini-python\Grammar" />
           <option name="libDir" value="" />
           <option name="encoding" value="" />
-          <option name="pkg" value="generated" />
+          <option name="pkg" value="Generated" />
           <option name="language" value="CSharp" />
           <option name="generateListener" value="false" />
         </PerGrammarGenerationSettings>
@@ -19,7 +19,7 @@
           <option name="outputDir" value="D:\projects\mini-python\Grammar" />
           <option name="libDir" value="" />
           <option name="encoding" value="" />
-          <option name="pkg" value="generated" />
+          <option name="pkg" value="Generated" />
           <option name="language" value="CSharp" />
           <option name="generateListener" value="false" />
         </PerGrammarGenerationSettings>

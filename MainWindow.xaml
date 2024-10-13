@@ -4,43 +4,80 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Title="MiniPython" WindowState="Maximized" Background="#1e1e1e">
 
+    <Window.Resources>
+        <Style x:Key="CommonStyle" TargetType="Control">
+            <Setter Property="Background" Value="#1e1e1e" />
+            <Setter Property="Foreground" Value="#ffffff" />
+        </Style>
+        <Style TargetType="Menu" BasedOn="{StaticResource CommonStyle}" />
+        <Style TargetType="MenuItem" BasedOn="{StaticResource CommonStyle}" />
+        <Style TargetType="TabItem" BasedOn="{StaticResource CommonStyle}">
+            <Setter Property="BorderBrush" Value="#1e1e1e" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Border Name="Border" Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" Padding="10,2">
+                            <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center"
+                                              HorizontalAlignment="Center" ContentSource="Header" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#1e1e1e" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#1e1e1e" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/> <!-- Menú superior -->
-            <RowDefinition Height="*"/>    <!-- Editor de código y pestañas (se expandirá) -->
-            <RowDefinition Height="Auto"/> <!-- Botón para mostrar/ocultar consola -->
-            <RowDefinition Height="200"/>  <!-- Consola fija en la parte inferior -->
-            <RowDefinition Height="Auto"/> <!-- Fila extra para el botón en la parte inferior -->
+            <RowDefinition Height="Auto" /> <!-- Menú superior -->
+            <RowDefinition Height="*" />    <!-- Editor de código y pestañas (se expandirá) -->
+            <RowDefinition Height="Auto" /> <!-- Botón para mostrar/ocultar consola -->
+            <RowDefinition Height="200" />  <!-- Consola fija en la parte inferior -->
+            <RowDefinition Height="Auto" /> <!-- Fila extra para el botón en la parte inferior -->
         </Grid.RowDefinitions>
 
         <!-- Menú superior -->
-        <Menu Grid.Row="0" Background="White" Foreground="#1e1e1e">
-            <MenuItem Header="_File">
+        <Menu Grid.Row="0">
+            <MenuItem Header="_Archivo">
                 <MenuItem Header="Abrir archivo local" Click="OpenFile_Click" />
                 <MenuItem Header="Abrir desde Web" Click="OpenFromWeb_Click" />
                 <MenuItem Header="Guardar archivo" Click="SaveFile_Click" />
             </MenuItem>
+            <MenuItem Header="_Desarrolladores">
+                <MenuItem Header="Repositorio Github" />
+                <MenuItem Header="LinkedIn - Kevin Jiménez" />
+                <MenuItem Header="LinkedIn - Fabian Fernandez" />
+                <MenuItem Header="LinkedIn - Justin Martinez" />
+            </MenuItem>
         </Menu>
 
         <!-- Panel principal con las pestañas de código -->
-        <TabControl x:Name="TabControl" Grid.Row="1" Background="#2d2d2d" Foreground="White" BorderBrush="#2d2d2d">
-            <TabItem Header="+" IsEnabled="True" Background="#2d2d2d" Foreground="White" MouseUp="AddNewTab_Click"/>
+        <TabControl x:Name="TabControl" Grid.Row="1" Background="#1e1e1e" Foreground="#ffffff" BorderBrush="#1e1e1e">
+            <TabItem Header="+" IsEnabled="True" MouseUp="AddNewTab_Click" />
         </TabControl>
 
         <!-- Consola de resultados fija en la parte inferior -->
         <Grid Grid.Row="3" x:Name="ConsolePanel" Background="#252526" Visibility="Collapsed">
             <RichTextBox x:Name="ConsoleOutput"
-                     Background="#1e1e1e"
-                     Foreground="#ff0000"
-                     FontFamily="Consolas"
-                     FontSize="14"
-                     IsReadOnly="True"
-                     VerticalScrollBarVisibility="Auto"
-                     Padding="5"/>
+                         Background="#1e1e1e"
+                         Foreground="#ff0000"
+                         FontFamily="Consolas"
+                         FontSize="14"
+                         IsReadOnly="True"
+                         VerticalScrollBarVisibility="Auto"
+                         Padding="5" />
         </Grid>
 
         <!-- Botón para mostrar/ocultar la consola -->
@@ -53,6 +90,6 @@
                 Foreground="White"
                 HorizontalAlignment="Right"
                 Margin="5"
-                Click="ToggleConsoleVisibility"/>
+                Click="ToggleConsoleVisibility" />
     </Grid>
 </Window>

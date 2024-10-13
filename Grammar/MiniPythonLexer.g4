@@ -30,8 +30,8 @@ fragment ESC_SEQ: '\\' [btnfr"\\];
 NEWLINE: ('\r'? '\n' ' '*);
 
 // Comentarios
-COMMENT: '#' ~[\r\n]* -> channel(HIDDEN) ;
-MULTILINE_COMMENT: '"""' .*? '"""' -> channel(HIDDEN) ;
+COMMENT: '#' ~[\r\n]* -> channel(HIDDEN);
+MULTILINE_COMMENT: '"""' .*? '"""' -> channel(HIDDEN);
 
 // Espacios y caracteres ignorados
 WS: [ \t]+ -> skip; // Solo ignoramos espacios y tabulaciones, no saltos de línea
