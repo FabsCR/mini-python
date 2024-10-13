@@ -94,53 +94,6 @@ namespace MiniPython
             HighlightSymbolPairs(codeEditor, '{', '}', symbolBrush);
         }
 
-        private void HighlightSymbolPairs(RichTextBox richTextBox, char openSymbol, char closeSymbol, SolidColorBrush brush)
-        {
-            TextRange text = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
-            string pattern = $@"\{openSymbol}|\{closeSymbol}";
-            Regex regex = new Regex(pattern);
-
-            Stack<int> openSymbolIndices = new Stack<int>();
-
-            foreach (Match match in regex.Matches(text.Text))
-            {
-                if (match.Value == openSymbol.ToString())
-                {
-                    openSymbolIndices.Push(match.Index);
-                }
-                else if (match.Value == closeSymbol.ToString() && openSymbolIndices.Count > 0)
-                {
-                    int openIndex = openSymbolIndices.Pop();
-
-                    TextPointer openStart = GetTextPointerAtOffset(richTextBox.Document.ContentStart, openIndex);
-                    TextPointer openEnd = GetTextPointerAtOffset(richTextBox.Document.ContentStart, openIndex + 1);
-                    TextRange openSymbolRange = new TextRange(openStart, openEnd);
-                    openSymbolRange.ApplyPropertyValue(TextElement.ForegroundProperty, brush);
-
-                    TextPointer closeStart = GetTextPointerAtOffset(richTextBox.Document.ContentStart, match.Index);
-                    TextPointer closeEnd = GetTextPointerAtOffset(richTextBox.Document.ContentStart, match.Index + 1);
-                    TextRange closeSymbolRange = new TextRange(closeStart, closeEnd);
-                    closeSymbolRange.ApplyPropertyValue(TextElement.ForegroundProperty, brush);
-                }
-            }
-        }
-
-        private void HighlightText(RichTextBox richTextBox, string word, SolidColorBrush brush, bool isKeyword)
-        {
-            TextRange text = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
-            string pattern = isKeyword ? $@"\b{Regex.Escape(word)}\b" : Regex.Escape(word);
-            Regex regex = new Regex(pattern);
-
-            foreach (Match match in regex.Matches(text.Text))
-            {
-                TextPointer start = GetTextPointerAtOffset(richTextBox.Document.ContentStart, match.Index);
-                TextPointer end = GetTextPointerAtOffset(richTextBox.Document.ContentStart, match.Index + match.Length);
-
-                TextRange wordRange = new TextRange(start, end);
-                wordRange.ApplyPropertyValue(TextElement.ForegroundProperty, brush);
-            }
-        }
-
         private TextPointer GetTextPointerAtOffset(TextPointer start, int offset)
         {
             TextPointer current = start;
@@ -162,7 +115,63 @@ namespace MiniPython
 
             return current;
         }
-        
+
+        private void HighlightSymbolPairs(RichTextBox richTextBox, char openSymbol, char closeSymbol, SolidColorBrush brush)
+        {
+            TextRange text = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
+            string pattern = $@"\{openSymbol}|\{closeSymbol}";
+            Regex regex = new Regex(pattern);
+
+            Stack<int> openSymbolIndices = new Stack<int>();
+
+            foreach (Match match in regex.Matches(text.Text))
+            {
+                if (match.Value == openSymbol.ToString())
+                {
+                    openSymbolIndices.Push(match.Index);
+                }
+                else if (match.Value == closeSymbol.ToString() && openSymbolIndices.Count > 0)
+                {
+                    int openIndex = openSymbolIndices.Pop();
+
+                    TextPointer openStart = GetTextPointerAtOffset(richTextBox.Document.ContentStart, openIndex);
+                    TextPointer openEnd = GetTextPointerAtOffset(richTextBox.Document.ContentStart, openIndex + 1);
+                    if (openStart != null && openEnd != null)
+                    {
+                        TextRange openSymbolRange = new TextRange(openStart, openEnd);
+                        openSymbolRange.ApplyPropertyValue(TextElement.ForegroundProperty, brush);
+                    }
+
+                    TextPointer closeStart = GetTextPointerAtOffset(richTextBox.Document.ContentStart, match.Index);
+                    TextPointer closeEnd = GetTextPointerAtOffset(richTextBox.Document.ContentStart, match.Index + 1);
+                    if (closeStart != null && closeEnd != null)
+                    {
+                        TextRange closeSymbolRange = new TextRange(closeStart, closeEnd);
+                        closeSymbolRange.ApplyPropertyValue(TextElement.ForegroundProperty, brush);
+                    }
+                }
+            }
+        }
+
+        private void HighlightText(RichTextBox richTextBox, string word, SolidColorBrush brush, bool isKeyword)
+        {
+            TextRange text = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
+            string pattern = isKeyword ? $@"\b{Regex.Escape(word)}\b" : Regex.Escape(word);
+            Regex regex = new Regex(pattern);
+
+            foreach (Match match in regex.Matches(text.Text))
+            {
+                TextPointer start = GetTextPointerAtOffset(richTextBox.Document.ContentStart, match.Index);
+                TextPointer end = GetTextPointerAtOffset(richTextBox.Document.ContentStart, match.Index + match.Length);
+
+                if (start != null && end != null)
+                {
+                    TextRange wordRange = new TextRange(start, end);
+                    wordRange.ApplyPropertyValue(TextElement.ForegroundProperty, brush);
+                }
+            }
+        }
+                
         private void AddNewTab_Click(object sender, MouseButtonEventArgs e)
         {
             TabItem newTab = CreateTab("Sin Titulo.mnpy", "");
