@@ -72,7 +72,7 @@ namespace MiniPython
             {
                 Paragraph lineParagraph = new Paragraph(new Run(i.ToString()))
                 {
-                    LineHeight = 1
+                    LineHeight = 0.1
                 };
                 lineNumbers.Document.Blocks.Add(lineParagraph);
             }
@@ -279,8 +279,8 @@ namespace MiniPython
             };
 
             // Set consistent line spacing for the code editor
-            SetConsistentLineHeight(codeEditor, 1);
-            SetConsistentLineHeight(lineNumbers, 1);
+            SetConsistentLineHeight(codeEditor, 0.1);
+            SetConsistentLineHeight(lineNumbers, 0.1);
 
             // Event to disable the run button if the editor is empty
             codeEditor.TextChanged += (s, ev) =>
@@ -357,8 +357,8 @@ namespace MiniPython
                 Paragraph paragraph = new Paragraph(new Run(fileContent));
                 codeEditor.Document.Blocks.Add(paragraph);
 
-                codeEditor.Loaded += (s, ev) => codeEditor.Document.LineHeight = 1;
-                lineNumbers.Loaded += (s, ev) => lineNumbers.Document.LineHeight = 1;
+                codeEditor.Loaded += (s, ev) => codeEditor.Document.LineHeight = 0.1;
+                lineNumbers.Loaded += (s, ev) => lineNumbers.Document.LineHeight = 0.1;
                 
                 UpdateLineNumbers(lineNumbers, codeEditor);
             }
@@ -519,8 +519,8 @@ namespace MiniPython
                         UpdateLineNumbers(lineNumbers, codeEditor);
 
                         // Ajustar el espaciado de línea
-                        SetConsistentLineHeight(codeEditor, 1); // Ajustar a tu preferencia
-                        SetConsistentLineHeight(lineNumbers, 1);
+                        SetConsistentLineHeight(codeEditor, 0.1); 
+                        SetConsistentLineHeight(lineNumbers, 0.1);
                     }
                 }
             }
