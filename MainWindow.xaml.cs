@@ -10,7 +10,7 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using MiniPython.Grammar;
 using Antlr4.Runtime;
-using generated;
+using Generated;
 
 namespace MiniPython
 {

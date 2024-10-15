@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using System.IO;
 using Antlr4.Runtime;
-using generated;
+using Generated;
 
 namespace MiniPython.Grammar
 {
@@ -14,14 +13,13 @@ namespace MiniPython.Grammar
             ErrorMsgs = new List<string>();
         }
 
-        // Manejo de errores de sintaxis a nivel de tokens
         public void SyntaxError(TextWriter output, IRecognizer recognizer, IToken offendingSymbol, int line, int charPositionInLine, string msg, RecognitionException e)
         {
-            if (recognizer is MiniPythonParser) // Asegúrate de tener el namespace correcto aquí
+            if (recognizer is MiniPythonParser)
             {
                 ErrorMsgs.Add($"PARSER ERROR - line {line}:{charPositionInLine + 1} {msg}");
             }
-            else if (recognizer is MiniPythonLexer) // Asegúrate de tener el namespace correcto aquí
+            else if (recognizer is MiniPythonLexer)
             {
                 ErrorMsgs.Add($"SCANNER ERROR - line {line}:{charPositionInLine + 1} {msg}");
             }
@@ -31,10 +29,14 @@ namespace MiniPython.Grammar
             }
         }
 
-        // Manejo de errores de sintaxis a nivel de caracteres (lexer)
         public void SyntaxError(TextWriter output, IRecognizer recognizer, int offendingSymbol, int line, int charPositionInLine, string msg, RecognitionException e)
         {
             ErrorMsgs.Add($"LEXER ERROR - line {line}:{charPositionInLine + 1} {msg}");
+        }
+
+        public void AddContextError(string error)
+        {
+            ErrorMsgs.Add($"CONTEXT ERROR - {error}");
         }
 
         public bool HasErrors()
