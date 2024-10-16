@@ -1,7 +1,6 @@
-﻿using Generated;
+﻿namespace MiniPython.Grammar.Checker;
 
-namespace MiniPython.Grammar.Checker;
-
+using Generated;
 using Antlr4.Runtime;
 using System.Collections.Generic;
 using System.Text;
@@ -57,6 +56,7 @@ public class ContextAnalizer : MiniPythonParserBaseVisitor<object>
                         if (paramCount == newParamCount)
                         {
                             ReportError($"The function '{functionName}' is being redefined with the same {paramCount} parameters.", context.ID().Symbol);
+                            return null;
                         }
                     }
                 }
@@ -197,6 +197,142 @@ public class ContextAnalizer : MiniPythonParserBaseVisitor<object>
             }
         }
         return null;
+    }
+
+    public override object VisitSequence(MiniPythonParser.SequenceContext context)
+    {
+        return base.VisitSequence(context);
+    }
+
+    public override object VisitExpression(MiniPythonParser.ExpressionContext context)
+    {
+        var ex1 = Visit(context.additionExpression());
+        var additionExpr = context.additionExpression();
+        foreach (var multExpr in additionExpr.multiplicationExpression())
+        {
+            foreach (var elemExpr in multExpr.elementExpression())
+            {
+                if (elemExpr.primitiveExpression() is MiniPythonParser.PrimitiveExpressionExprListASTContext identifierContext)
+                {
+                    string identifier = identifierContext.ID().GetText();
+                    if (identifierContext.LPAREN() != null)
+                    {
+                        var functionSymbol = symbolsTable.Search(identifier);
+                        if (functionSymbol == null || functionSymbol.Type != SymbolType.Function)
+                        {
+                            ReportError($"The function '{identifier}' is not defined.", identifierContext.ID().Symbol);
+                        }
+                        else
+                        {
+                            var methodSymbol = functionSymbol as SymbolsTable.MethodIdent;
+                            int numArguments = identifierContext.expressionList()?.expression().Length ?? 0;
+                            int numParameters = methodSymbol.Params.Count;
+
+                            if (numArguments != numParameters)
+                            {
+                                ReportError($"The function '{identifier}' expects {numParameters} arguments, but {numArguments} were passed.", identifierContext.ID().Symbol);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        var symbol = symbolsTable.SearchInCurrentLevel(identifier);
+                        if (symbol == null)
+                        {
+                            symbol = symbolsTable.Search(identifier);
+                            if (symbol == null)
+                            {
+                                ReportError($"The variable '{identifier}' is not defined.", identifierContext.ID().Symbol);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return ex1;
+    }
+
+    public override object VisitComparison(MiniPythonParser.ComparisonContext context)
+    {
+        return base.VisitComparison(context);
+    }
+
+    public override object VisitAdditionExpression(MiniPythonParser.AdditionExpressionContext context)
+    {
+        return base.VisitAdditionExpression(context);
+    }
+
+    public override object VisitMultiplicationExpression(MiniPythonParser.MultiplicationExpressionContext context)
+    {
+        return base.VisitMultiplicationExpression(context);
+    }
+
+    public override object VisitElementExpression(MiniPythonParser.ElementExpressionContext context)
+    {
+        var primitiveExpr = context.primitiveExpression();
+        if (primitiveExpr != null)
+        {
+            var result = Visit(primitiveExpr);
+            if (context.LBRACKET() != null && context.expression() != null)
+            {
+                string primitiveText = primitiveExpr.GetText();
+                if (primitiveText.All(char.IsDigit))
+                {
+                    ReportError($"The expression '{primitiveText}' is not indexable.", context.primitiveExpression().Start);
+                    return null;
+                }
+                if (primitiveText.StartsWith("\"") && primitiveText.EndsWith("\""))
+                {
+                    ReportError($"The expression '{primitiveText}' is not indexable.", context.primitiveExpression().Start);
+                    return null;
+                }
+                Visit(context.expression());
+            }
+            return result;
+        }
+        return null;
+    }
+
+    public override object VisitExpressionList(MiniPythonParser.ExpressionListContext context)
+    {
+        return base.VisitExpressionList(context);
+    }
+
+    public override object VisitPrimitiveExpressionParenExprAST(MiniPythonParser.PrimitiveExpressionParenExprASTContext context)
+    {
+        return base.VisitPrimitiveExpressionParenExprAST(context);
+    }
+
+    public override object VisitPrimitiveExpressionLenAST(MiniPythonParser.PrimitiveExpressionLenASTContext context)
+    {
+        return base.VisitPrimitiveExpressionLenAST(context);
+    }
+
+    public override object VisitPrimitiveExpressionListExprAST(MiniPythonParser.PrimitiveExpressionListExprASTContext context)
+    {
+        return base.VisitPrimitiveExpressionListExprAST(context);
+    }
+
+    public override object VisitPrimitiveExpressionLiteralAST(MiniPythonParser.PrimitiveExpressionLiteralASTContext context)
+    {
+        return base.VisitPrimitiveExpressionLiteralAST(context);
+    }
+
+    public override object VisitPrimitiveExpressionExprListAST(MiniPythonParser.PrimitiveExpressionExprListASTContext context)
+    {
+        string identifier = context.ID().GetText();
+        var symbol = symbolsTable.SearchInCurrentLevel(identifier);
+        return symbol;
+    }
+
+    public override object VisitListExpression(MiniPythonParser.ListExpressionContext context)
+    {
+        return base.VisitListExpression(context);
+    }
+
+    public bool HasErrors()
+    {
+        return errorListener.HasErrors();
     }
 
     public override string ToString()

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiniPython")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c0fef3bdf7768a3e4fb78395354b46df12ddfb5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9f4d2e9652afa613ecb7a3ae8741e5950947f81")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiniPython")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiniPython")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
