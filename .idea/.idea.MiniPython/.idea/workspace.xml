@@ -9,7 +9,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1f9d092d-6ab4-49be-9163-2b20ddf3b561" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grammar/Checker/ContextAnalizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Grammar/Checker/ContextAnalizer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodigosPrueba/test4.mnpy" beforeDir="false" afterPath="$PROJECT_DIR$/CodigosPrueba/test4.mnpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodigosPrueba/test5.mnpy" beforeDir="false" afterPath="$PROJECT_DIR$/CodigosPrueba/test5.mnpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grammar/CustomErrorListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Grammar/CustomErrorListener.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.AssemblyInfoInputs.cache" afterDir="false" />
     </list>
@@ -95,7 +97,9 @@
       <workItem from="1728842005361" duration="747000" />
       <workItem from="1728844019427" duration="4837000" />
       <workItem from="1729010456248" duration="3342000" />
-      <workItem from="1729074123482" duration="1040000" />
+      <workItem from="1729074123482" duration="1375000" />
+      <workItem from="1729103989796" duration="485000" />
+      <workItem from="1729107031595" duration="1081000" />
     </task>
     <servers />
   </component>
