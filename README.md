@@ -5,15 +5,6 @@
 MiniPython es un compilador e intérprete ligero basado en un subconjunto del lenguaje Python. Está diseñado con C# y utiliza **ANTLR4** para el análisis léxico, sintáctico y contextual. 
 El proyecto incluye una interfaz gráfica que permite a los usuarios escribir, editar y ejecutar código MiniPython fácilmente.
 
-## 🔧 Características
-
-- **📝 Editor de código**: Con soporte para apertura y guardado de archivos `.mnpy`.
-- **⚙️ Análisis léxico**: Soporta comentarios, constantes numéricas y operadores.
-- **🧩 Análisis sintáctico**: Basado en una gramática **BNF** con **ANTLR4**.
-- **🌳 Árbol de Sintaxis Abstracta (AST)**: Generación de AST durante la compilación.
-- **🔍 Análisis contextual**: Implementación del análisis contextual para verificar la validez de los identificadores y funciones en el código.
-- **💻 Interfaz gráfica**: Con numeración de líneas y reporte de errores interactivo.
-
 ## 🛠️ Instalación
 
 1. Clona este repositorio:
