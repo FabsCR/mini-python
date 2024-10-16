@@ -58,7 +58,7 @@
                 <MenuItem Header="Repositorio Github" Click="OpenUrl" Tag="https://github.com/FabsCR/mini-python" />
                 <MenuItem Header="LinkedIn - Kevin Jiménez" Click="OpenUrl" Tag="https://www.linkedin.com/in/kvnjt/" />
                 <MenuItem Header="LinkedIn - Fabian Fernandez" Click="OpenUrl" Tag="https://www.linkedin.com/in/fabian-fdez/" />
-                <MenuItem Header="LinkedIn - Justin Martinez" Click="OpenUrl" Tag="https://www.linkedin.com/in/justin-martinez" />
+                <MenuItem Header="LinkedIn - Justin Martinez" Click="OpenUrl" Tag="https://www.linkedin.com/in/justin-mart%C3%ADnez-280a2123b/" />
             </MenuItem>
         </Menu>
         

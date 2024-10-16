@@ -6,7 +6,7 @@
         <PerGrammarGenerationSettings>
           <option name="fileName" value="$PROJECT_DIR$/Grammar/MiniPythonLexer.g4" />
           <option name="autoGen" value="true" />
-          <option name="outputDir" value="D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\Grammar" />
+          <option name="outputDir" value="D:\projects\mini-python\Grammar" />
           <option name="libDir" value="" />
           <option name="encoding" value="" />
           <option name="pkg" value="Generated" />
@@ -16,7 +16,7 @@
         <PerGrammarGenerationSettings>
           <option name="fileName" value="$PROJECT_DIR$/Grammar/MiniPythonParser.g4" />
           <option name="autoGen" value="true" />
-          <option name="outputDir" value="D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\Grammar" />
+          <option name="outputDir" value="D:\projects\mini-python\Grammar" />
           <option name="libDir" value="" />
           <option name="encoding" value="" />
           <option name="pkg" value="Generated" />
