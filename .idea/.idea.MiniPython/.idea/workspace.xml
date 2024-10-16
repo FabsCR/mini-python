@@ -7,48 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f9d092d-6ab4-49be-9163-2b20ddf3b561" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/discord.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grammar/Generated/MiniPythonLexer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Grammar/Generated/MiniPythonLexer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grammar/Generated/MiniPythonLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/Grammar/Generated/MiniPythonLexer.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grammar/Generated/MiniPythonParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Grammar/Generated/MiniPythonParser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grammar/Generated/MiniPythonParser.interp" beforeDir="false" afterPath="$PROJECT_DIR$/Grammar/Generated/MiniPythonParser.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grammar/Generated/MiniPythonParserBaseVisitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Grammar/Generated/MiniPythonParserBaseVisitor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grammar/Generated/MiniPythonParserVisitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Grammar/Generated/MiniPythonParserVisitor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/App.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MainWindow.baml" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MainWindow.baml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MainWindow.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.g.resources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.genruntimeconfig.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython_MarkupCompile.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/MiniPython_MarkupCompile.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/ref/MiniPython.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/ref/MiniPython.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0-windows/refint/MiniPython.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0-windows/refint/MiniPython.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/MiniPython.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/MiniPython.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/MiniPython.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/MiniPython.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
-    </list>
+    <list default="true" id="1f9d092d-6ab4-49be-9163-2b20ddf3b561" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,7 +101,7 @@
       <workItem from="1729074123482" duration="1375000" />
       <workItem from="1729103989796" duration="485000" />
       <workItem from="1729107031595" duration="3118000" />
-      <workItem from="1729115093644" duration="3408000" />
+      <workItem from="1729115093644" duration="3989000" />
     </task>
     <servers />
   </component>

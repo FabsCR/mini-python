@@ -39,7 +39,8 @@ El proyecto incluye una interfaz gráfica que permite a los usuarios escribir, e
 
 ## 📚 Documentación
 
-Puedes visualizar o descargar la documentación detallada del proyecto en los siguientes enlaces:
+Puedes visualizar la documentacion detallada del proyecto en los siguientes enlaces:
 
-- [Visualizar Documentación MiniPython - Entrega 1](https://github.com/FabsCR/mini-python/blob/main/DocumentacionEntrega1_Compiladores_FabianKevinJustin.pdf)
-- [Descargar Documentación MiniPython - Entrega 1](https://github.com/FabsCR/mini-python/raw/main/DocumentacionEntrega1_Compiladores_FabianKevinJustin.pdf)
+- [Documentación Entrega 1](https://github.com/FabsCR/mini-python/raw/main/DocumentacionEntrega1_Compiladores_FabianKevinJustin.pdf)
+
+- [Documentacion Entrega 2](https://github.com/FabsCR/mini-python/raw/main/DocumentacionEntrega2_Compiladores_FabianKevinJustin.pdf)
