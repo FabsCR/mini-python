@@ -12,14 +12,14 @@ namespace MiniPython.Grammar
         {
             ErrorMsgs = new List<string>();
         }
-
+        
         public void SyntaxError(TextWriter output, IRecognizer recognizer, IToken offendingSymbol, int line, int charPositionInLine, string msg, RecognitionException e)
         {
-            if (recognizer is MiniPythonParser)
+            if (recognizer is MiniPythonParser) 
             {
                 ErrorMsgs.Add($"PARSER ERROR - line {line}:{charPositionInLine + 1} {msg}");
             }
-            else if (recognizer is MiniPythonLexer)
+            else if (recognizer is MiniPythonLexer) 
             {
                 ErrorMsgs.Add($"SCANNER ERROR - line {line}:{charPositionInLine + 1} {msg}");
             }
@@ -28,15 +28,15 @@ namespace MiniPython.Grammar
                 ErrorMsgs.Add("Other Error");
             }
         }
-
+        
         public void SyntaxError(TextWriter output, IRecognizer recognizer, int offendingSymbol, int line, int charPositionInLine, string msg, RecognitionException e)
         {
             ErrorMsgs.Add($"LEXER ERROR - line {line}:{charPositionInLine + 1} {msg}");
         }
 
-        public void AddContextError(string error)
+        public void AddContextError(string msg)
         {
-            ErrorMsgs.Add($"CONTEXT ERROR - {error}");
+            ErrorMsgs.Add($"CONTEXT ERROR - {msg}");
         }
 
         public bool HasErrors()

@@ -21,7 +21,7 @@ public class SymbolsTable
             Tok = tok;
             Type = type;
             Level = level;
-            Value = 0; // Valor por defecto
+            Value = 0; 
         }
 
         public abstract void PrintIdent();
@@ -55,14 +55,14 @@ public class SymbolsTable
 
         public override void PrintIdent()
         {
-            Console.WriteLine($"Función: {Tok.Text}, Tipo: {Type}, Nivel: {Level}, Parámetros: {Params.Count}");
+            Console.WriteLine($"Funcion: {Tok.Text}, Tipo: {Type}, Nivel: {Level}, Parametros: {Params.Count}");
         }
     }
 
     public SymbolsTable()
     {
         table = new List<Dictionary<string, Ident>>();
-        currentLevel = -1; // Nivel inicial
+        currentLevel = -1;
     }
 
     public void OpenScope()
@@ -141,7 +141,7 @@ public class SymbolsTable
 
     public void Print()
     {
-        Console.WriteLine("----- INICIO TABLA ------");
+        Console.WriteLine("////////// INICIO TABLA \\\\\\\\\\");
         for (int i = 0; i <= currentLevel; i++)
         {
             Console.WriteLine($"Nivel {i}:");
@@ -151,7 +151,7 @@ public class SymbolsTable
             }
         }
 
-        Console.WriteLine("----- FIN TABLA ------");
+        Console.WriteLine("////////// FINAL TABLA \\\\\\\\\\\\\\\\\\\\");
     }
 }
 
