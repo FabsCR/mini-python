@@ -2,7 +2,7 @@
 
 ## 📖 Descripción
 
-MiniPython es un compilador e intérprete ligero basado en un subconjunto del lenguaje Python. Está diseñado con C# y utiliza **ANTLR4** para el análisis léxico y sintáctico. 
+MiniPython es un compilador e intérprete ligero basado en un subconjunto del lenguaje Python. Está diseñado con C# y utiliza **ANTLR4** para el análisis léxico, sintáctico y contextual. 
 El proyecto incluye una interfaz gráfica que permite a los usuarios escribir, editar y ejecutar código MiniPython fácilmente.
 
 ## 🔧 Características
@@ -11,6 +11,7 @@ El proyecto incluye una interfaz gráfica que permite a los usuarios escribir, e
 - **⚙️ Análisis léxico**: Soporta comentarios, constantes numéricas y operadores.
 - **🧩 Análisis sintáctico**: Basado en una gramática **BNF** con **ANTLR4**.
 - **🌳 Árbol de Sintaxis Abstracta (AST)**: Generación de AST durante la compilación.
+- **🔍 Análisis contextual**: Implementación del análisis contextual para verificar la validez de los identificadores y funciones en el código.
 - **💻 Interfaz gráfica**: Con numeración de líneas y reporte de errores interactivo.
 
 ## 🛠️ Instalación
@@ -29,13 +30,13 @@ El proyecto incluye una interfaz gráfica que permite a los usuarios escribir, e
 1. Abre el editor MiniPython desde la interfaz gráfica.
 2. Carga o crea un archivo `.mnpy`.
 3. Utiliza los botones para **guardar** o **ejecutar** el código.
-4. Los errores sintácticos se mostrarán en la interfaz, y podrás hacer clic en ellos para navegar a la línea correspondiente.
+4. Los errores sintácticos y contextuales se mostrarán en la interfaz, y podrás hacer clic en ellos para navegar a la línea correspondiente.
 
 ## ⚙️ Requisitos
 
 - **JetBrains Rider** (IDE recomendado)
 - **.NET Core SDK**
-- **ANTLR4** (para el análisis léxico y sintáctico)
+- **ANTLR4** (para el análisis léxico, sintáctico y contextual)
 
 ## 📚 Documentación
 
