@@ -18,19 +18,24 @@ namespace MiniPython
     public partial class MainWindow : Window
     {
         private readonly DispatcherTimer _highlightingTimer;
+
         private readonly CustomErrorListener
-            _errorListener = new CustomErrorListener(); 
+            _errorListener = new CustomErrorListener();
 
         private readonly string[] keywords = { "def", "if", "else", "return", "print", "for", "while", "in", "len" };
-        private readonly SolidColorBrush keywordBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#d1a104")); 
-        private readonly SolidColorBrush symbolBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#9c224b"));
+
+        private readonly SolidColorBrush keywordBrush =
+            new SolidColorBrush((Color)ColorConverter.ConvertFromString("#d1a104"));
+
+        private readonly SolidColorBrush symbolBrush =
+            new SolidColorBrush((Color)ColorConverter.ConvertFromString("#9c224b"));
 
         public MainWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
             this.KeyDown += MainWindow_KeyDown;
-            
+
             _highlightingTimer = new DispatcherTimer
             {
                 Interval = TimeSpan.FromMilliseconds(200)
@@ -52,6 +57,7 @@ namespace MiniPython
                 }
             };
         }
+
         private void OpenUrl(object sender, RoutedEventArgs e)
         {
             if (sender is MenuItem menuItem && menuItem.Tag is string url)
@@ -63,14 +69,15 @@ namespace MiniPython
                 });
             }
         }
+
         private void UpdateLineNumbers(RichTextBox lineNumbers, RichTextBox codeEditor)
         {
             lineNumbers.Document.Blocks.Clear();
-            
+
             string codeText = new TextRange(codeEditor.Document.ContentStart, codeEditor.Document.ContentEnd).Text;
 
             string[] lines = codeText.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
-            
+
             int lineCount = lines.Length;
             if (lineCount > 0 && string.IsNullOrWhiteSpace(lines[lineCount - 1]))
             {
@@ -86,7 +93,7 @@ namespace MiniPython
                 lineNumbers.Document.Blocks.Add(lineParagraph);
             }
         }
-        
+
         private void ApplySyntaxHighlighting(RichTextBox codeEditor)
         {
             TextRange textRange = new TextRange(codeEditor.Document.ContentStart, codeEditor.Document.ContentEnd);
@@ -96,7 +103,7 @@ namespace MiniPython
             {
                 HighlightText(codeEditor, keyword, keywordBrush, true);
             }
-            
+
             HighlightSymbolPairs(codeEditor, '(', ')', symbolBrush);
             HighlightSymbolPairs(codeEditor, '[', ']', symbolBrush);
             HighlightSymbolPairs(codeEditor, '{', '}', symbolBrush);
@@ -116,15 +123,18 @@ namespace MiniPython
                     {
                         return current.GetPositionAtOffset(offset - count);
                     }
+
                     count += runLength;
                 }
+
                 current = current.GetNextContextPosition(LogicalDirection.Forward);
             }
 
             return current;
         }
 
-        private void HighlightSymbolPairs(RichTextBox richTextBox, char openSymbol, char closeSymbol, SolidColorBrush brush)
+        private void HighlightSymbolPairs(RichTextBox richTextBox, char openSymbol, char closeSymbol,
+            SolidColorBrush brush)
         {
             TextRange text = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
             string pattern = $@"\{openSymbol}|\{closeSymbol}";
@@ -179,7 +189,7 @@ namespace MiniPython
                 }
             }
         }
-                
+
         private void AddNewTab_Click(object sender, MouseButtonEventArgs e)
         {
             TabItem newTab = CreateTab("Sin Titulo.mnpy", "");
@@ -193,8 +203,8 @@ namespace MiniPython
 
             if (newTab != null)
             {
-                TabControl.Items.Insert(TabControl.Items.Count - 1, newTab); 
-                TabControl.SelectedItem = newTab; 
+                TabControl.Items.Insert(TabControl.Items.Count - 1, newTab);
+                TabControl.SelectedItem = newTab;
             }
             else
             {
@@ -221,15 +231,15 @@ namespace MiniPython
             tabHeader.Children.Add(headerText);
             tabHeader.Children.Add(closeButton);
             newTab.Header = tabHeader;
-            
+
             newTab.MouseEnter += (s, ev) => closeButton.Visibility = Visibility.Visible;
             newTab.MouseLeave += (s, ev) => closeButton.Visibility = Visibility.Hidden;
-            
+
             DockPanel dockPanel = new DockPanel();
-            
+
             Button runButton = new Button
             {
-                Content = "▶", 
+                Content = "▶",
                 Width = 40,
                 Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#2d2d2d")),
                 Foreground = new SolidColorBrush(Colors.Green),
@@ -238,19 +248,19 @@ namespace MiniPython
                 VerticalAlignment = VerticalAlignment.Top,
                 Margin = new Thickness(10)
             };
-            
+
             runButton.Click += RunCode_Click;
-            
+
             runButton.IsEnabled = !string.IsNullOrWhiteSpace(content);
-            
+
             DockPanel.SetDock(runButton, Dock.Right);
             dockPanel.Children.Add(runButton);
-            
+
             Grid grid = new Grid();
-            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(50) }); 
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(50) });
             grid.ColumnDefinitions.Add(new ColumnDefinition
-                { Width = new GridLength(1, GridUnitType.Star) }); 
-            
+                { Width = new GridLength(1, GridUnitType.Star) });
+
             RichTextBox lineNumbers = new RichTextBox
             {
                 FontFamily = new FontFamily("Consolas"),
@@ -258,38 +268,38 @@ namespace MiniPython
                 Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#252526")),
                 Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("Gray")),
                 IsReadOnly = true,
-                VerticalScrollBarVisibility = ScrollBarVisibility.Hidden, 
+                VerticalScrollBarVisibility = ScrollBarVisibility.Hidden,
                 HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden,
-                Width = 50, 
+                Width = 50,
             };
-            
+
             RichTextBox codeEditor = new RichTextBox
             {
                 FontFamily = new FontFamily("Consolas"),
                 FontSize = 14,
                 Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1e1e1e")),
                 Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("White")),
-                VerticalScrollBarVisibility = ScrollBarVisibility.Hidden, 
+                VerticalScrollBarVisibility = ScrollBarVisibility.Hidden,
                 HorizontalScrollBarVisibility = ScrollBarVisibility.Auto,
                 AcceptsReturn = true,
                 AcceptsTab = true,
                 Document = new FlowDocument(new Paragraph(new Run(content))),
                 Margin = new Thickness(0),
             };
-            
+
             SetConsistentLineHeight(codeEditor, 0.1);
             SetConsistentLineHeight(lineNumbers, 0.1);
-            
+
             codeEditor.TextChanged += (s, ev) =>
             {
                 runButton.IsEnabled = !string.IsNullOrWhiteSpace(
                     new TextRange(codeEditor.Document.ContentStart, codeEditor.Document.ContentEnd).Text.Trim());
                 UpdateLineNumbers(lineNumbers, codeEditor);
-                
+
                 _highlightingTimer.Stop();
                 _highlightingTimer.Start();
             };
-            
+
             ScrollViewer scrollViewer = new ScrollViewer
             {
                 VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
@@ -298,7 +308,7 @@ namespace MiniPython
 
             grid.Children.Add(lineNumbers);
             grid.Children.Add(codeEditor);
-            Grid.SetColumn(lineNumbers, 0); 
+            Grid.SetColumn(lineNumbers, 0);
             Grid.SetColumn(codeEditor, 1);
 
             scrollViewer.Content = grid;
@@ -317,7 +327,7 @@ namespace MiniPython
                 MessageBoxButton.YesNoCancel);
             if (result == MessageBoxResult.Yes)
             {
-                SaveFile_Click(null, null); 
+                SaveFile_Click(null, null);
                 TabControl.Items.Remove(tab);
             }
             else if (result == MessageBoxResult.No)
@@ -352,7 +362,7 @@ namespace MiniPython
 
                 codeEditor.Loaded += (s, ev) => codeEditor.Document.LineHeight = 0.1;
                 lineNumbers.Loaded += (s, ev) => lineNumbers.Document.LineHeight = 0.1;
-                
+
                 UpdateLineNumbers(lineNumbers, codeEditor);
             }
         }
@@ -380,7 +390,7 @@ namespace MiniPython
                                 {
                                     Filter = "MiniPython Files (.mnpy)|*.mnpy"
                                 };
-                                
+
                                 if (saveFileDialog.ShowDialog() == true)
                                 {
                                     File.WriteAllText(saveFileDialog.FileName, code);
@@ -424,12 +434,11 @@ namespace MiniPython
 
         private async void OpenFromWeb_Click(object sender, RoutedEventArgs e)
         {
-
             string url = Microsoft.VisualBasic.Interaction.InputBox(
                 "Ingrese el enlace directo del archivo (.mnpy):",
                 "Abrir desde Web",
                 "",
-                -1, -1 
+                -1, -1
             );
 
             if (string.IsNullOrWhiteSpace(url))
@@ -437,7 +446,7 @@ namespace MiniPython
                 MessageBox.Show("Debe ingresar una URL válida.");
                 return;
             }
-            
+
             if (!url.EndsWith(".mnpy"))
             {
                 MessageBox.Show("El enlace debe terminar en .mnpy.");
@@ -453,16 +462,16 @@ namespace MiniPython
                         url = url.Replace("github.com", "raw.githubusercontent.com")
                             .Replace("/blob/", "/");
                     }
-                    
+
                     var response = await client.GetAsync(url);
                     if (!response.IsSuccessStatusCode)
                     {
                         MessageBox.Show($"Error al descargar el archivo: {response.ReasonPhrase}");
                         return;
                     }
-                    
+
                     string fileContent = await response.Content.ReadAsStringAsync();
-                    
+
                     string fileName = Path.GetFileName(url);
                     if (string.IsNullOrWhiteSpace(fileName))
                     {
@@ -474,9 +483,9 @@ namespace MiniPython
                         MessageBox.Show("El archivo descargado está vacío.");
                         return;
                     }
-                    
+
                     AddTabWithContent($"(web){fileName}", fileContent);
-                    
+
                     TabItem selectedTab = TabControl.SelectedItem as TabItem;
                     if (selectedTab != null)
                     {
@@ -486,9 +495,9 @@ namespace MiniPython
 
                         RichTextBox lineNumbers = grid.Children[0] as RichTextBox;
                         RichTextBox codeEditor = grid.Children[1] as RichTextBox;
-                        
+
                         UpdateLineNumbers(lineNumbers, codeEditor);
-                        SetConsistentLineHeight(codeEditor, 0.1); 
+                        SetConsistentLineHeight(codeEditor, 0.1);
                         SetConsistentLineHeight(lineNumbers, 0.1);
                     }
                 }
@@ -515,46 +524,40 @@ namespace MiniPython
                     {
                         ScrollViewer scrollViewer = dockPanel.Children[1] as ScrollViewer;
                         Grid grid = scrollViewer.Content as Grid;
-                        
                         RichTextBox codeEditor = grid.Children[1] as RichTextBox;
                         if (codeEditor != null)
                         {
                             string code = new TextRange(codeEditor.Document.ContentStart,
                                 codeEditor.Document.ContentEnd).Text;
-                            
                             var lexer = new MiniPythonLexer(new AntlrInputStream(code));
                             var tokens = new CommonTokenStream(lexer);
                             var parser = new MiniPythonParser(tokens);
-                            
                             _errorListener.ErrorMsgs.Clear();
                             ConsoleOutput.Document.Blocks.Clear();
-                            
                             parser.RemoveErrorListeners();
                             lexer.RemoveErrorListeners();
                             parser.AddErrorListener(_errorListener);
                             lexer.AddErrorListener(_errorListener);
-                            
                             var result = parser.program();
-                            
                             if (_errorListener.HasErrors())
                             {
                                 ShowInConsole(_errorListener.ToString());
                             }
                             else
                             {
-                                var contextAnalizer = new ContextAnalizer(_errorListener);
-                                contextAnalizer.Visit(result);
-                                
-                                if (_errorListener.HasErrors())
+                                // Ejecutar el ContextAnalizer
+                                var contextAnalyzer = new ContextAnalizer();
+                                contextAnalyzer.Visit(result);
+                                if (contextAnalyzer.hasErrors())
                                 {
-                                    ShowInConsole(_errorListener.ToString());
+                                    ShowInConsole(contextAnalyzer.ToString());
                                 }
                                 else
                                 {
-                                    ShowInConsole("Código ejecutado correctamente.");
+                                    ShowInConsole("Código ejecutado y analizado correctamente.");
                                 }
                             }
-                            
+
                             if (ConsolePanel.Visibility == Visibility.Collapsed)
                             {
                                 ToggleConsoleVisibility(null, null);
@@ -585,27 +588,26 @@ namespace MiniPython
 
                     if (lineIndex != -1 && colonIndex != -1)
                     {
-
                         string lineNumberText = line.Substring(lineIndex + 5, colonIndex - lineIndex - 5);
                         string columnNumberText =
                             line.Substring(colonIndex + 1, line.IndexOf(" ", colonIndex) - colonIndex - 1);
-                        
+
                         int lineNumber = int.Parse(lineNumberText);
                         int columnNumber = int.Parse(columnNumberText);
-                        
+
                         paragraph.Inlines.Add(new Run(line.Substring(0, lineIndex)));
-                        
+
                         Hyperlink hyperlink = new Hyperlink(new Run($"line {lineNumber}:{columnNumber}"))
                         {
                             Foreground =
                                 (SolidColorBrush)new BrushConverter().ConvertFrom("#87CEEB"),
                             ToolTip = $"Ir a la línea {lineNumber}, columna {columnNumber}"
                         };
-                        
+
                         hyperlink.Click += (sender, e) => NavigateToError(lineNumber, columnNumber);
 
                         paragraph.Inlines.Add(hyperlink);
-                        
+
                         paragraph.Inlines.Add(new Run(line.Substring(colonIndex + columnNumberText.Length + 1)));
                     }
                     else
@@ -617,13 +619,14 @@ namespace MiniPython
                 {
                     paragraph.Inlines.Add(new Run(line));
                 }
+
                 ConsoleOutput.Document.Blocks.Add(paragraph);
             }
-            
+
             if (ConsolePanel.Visibility == Visibility.Collapsed)
             {
                 ConsolePanel.Visibility = Visibility.Visible;
-                ToggleConsoleButton.Content = "▼"; 
+                ToggleConsoleButton.Content = "▼";
                 Grid.SetRow(ToggleConsoleButton, 2);
             }
         }
@@ -638,7 +641,7 @@ namespace MiniPython
                 {
                     ScrollViewer scrollViewer = dockPanel.Children[1] as ScrollViewer;
                     Grid grid = scrollViewer.Content as Grid;
-                    
+
                     RichTextBox codeEditor = grid.Children[1] as RichTextBox;
 
                     if (codeEditor != null)
@@ -650,7 +653,7 @@ namespace MiniPython
                             TextPointer endPointer = startPointer.GetPositionAtOffset(5);
                             codeEditor.Selection.Select(startPointer, endPointer);
                             codeEditor.Focus();
-                            
+
                             codeEditor.ScrollToVerticalOffset(codeEditor.Selection.Start
                                 .GetCharacterRect(LogicalDirection.Forward).Top);
                         }
@@ -658,12 +661,12 @@ namespace MiniPython
                 }
             }
         }
-        
+
         private TextPointer GetTextPointerAtLineAndColumn(RichTextBox codeEditor, int line, int column)
         {
             TextPointer pointer = codeEditor.Document.ContentStart;
             int currentLine = 1;
-            
+
             while (pointer != null && currentLine < line)
             {
                 if (pointer.GetPointerContext(LogicalDirection.Forward) == TextPointerContext.ElementStart)
@@ -677,7 +680,7 @@ namespace MiniPython
 
                 pointer = pointer.GetNextContextPosition(LogicalDirection.Forward);
             }
-            
+
             if (pointer != null)
             {
                 for (int i = 0; i < column && pointer != null; i++)
@@ -688,7 +691,7 @@ namespace MiniPython
 
             return pointer;
         }
-        
+
         private void ToggleConsoleVisibility(object sender, RoutedEventArgs e)
         {
             if (ConsolePanel.Visibility == Visibility.Visible)

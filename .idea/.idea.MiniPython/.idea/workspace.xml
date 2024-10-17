@@ -9,7 +9,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1f9d092d-6ab4-49be-9163-2b20ddf3b561" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MiniPython/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grammar/Checker/ContextAnalizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Grammar/Checker/ContextAnalizer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grammar/CustomErrorListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Grammar/CustomErrorListener.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0-windows/MiniPython.pdb" afterDir="false" />
@@ -115,7 +117,7 @@
       <workItem from="1729074123482" duration="1375000" />
       <workItem from="1729103989796" duration="485000" />
       <workItem from="1729107031595" duration="3118000" />
-      <workItem from="1729115093644" duration="4061000" />
+      <workItem from="1729115093644" duration="8718000" />
     </task>
     <servers />
   </component>
