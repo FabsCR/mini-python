@@ -17,11 +17,11 @@ namespace MiniPython.Grammar
         // Manejo de errores de sintaxis a nivel de tokens
         public void SyntaxError(TextWriter output, IRecognizer recognizer, IToken offendingSymbol, int line, int charPositionInLine, string msg, RecognitionException e)
         {
-            if (recognizer is MiniPythonParser) // Asegúrate de tener el namespace correcto aquí
+            if (recognizer is MiniPythonParser) 
             {
                 ErrorMsgs.Add($"PARSER ERROR - line {line}:{charPositionInLine + 1} {msg}");
             }
-            else if (recognizer is MiniPythonLexer) // Asegúrate de tener el namespace correcto aquí
+            else if (recognizer is MiniPythonLexer) 
             {
                 ErrorMsgs.Add($"SCANNER ERROR - line {line}:{charPositionInLine + 1} {msg}");
             }
