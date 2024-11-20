@@ -3,8 +3,6 @@ using System.Collections.Generic;
 namespace AlmacenNameSpace
 {
     public class Almacen{
-
-
         // PRELIMINARY DATA STRUCTURE:
         Dictionary<string, dynamic> data;
 
@@ -29,9 +27,9 @@ namespace AlmacenNameSpace
 
             foreach (dynamic item in this.data)
             {
-                    if (item.Key == key ){
-                        result = item.Value;
-                    }
+                if (item.Key == key ){
+                    result = item.Value;
+                }
                     
             }
             return result;
@@ -62,9 +60,9 @@ namespace AlmacenNameSpace
         // PRINT DICTIONARY
         public void printContainer(){
             foreach (dynamic item in this.data)
-                {
-                    Console.WriteLine("Key: {0}, Value: {1}", item.Key, item.Value);
-                }
+            {
+                Console.WriteLine("Key: {0}, Value: {1}", item.Key, item.Value);
+            }
         }
         
     }
