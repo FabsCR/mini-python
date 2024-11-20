@@ -545,7 +545,6 @@ namespace MiniPython
                             }
                             else
                             {
-                                // Ejecutar el ContextAnalizer
                                 var contextAnalyzer = new ContextAnalizer();
                                 contextAnalyzer.Visit(result);
                                 if (contextAnalyzer.hasErrors())

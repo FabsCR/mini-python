@@ -1,9 +1,7 @@
 ﻿def sum_list(lst):
     total = 0
-    for num in lst:
-        total = total + num
     return total
 
 def main():
-    numbers = [1, 2, 3, 4, 5]
-    print(sum_list(numbers))
+    numbers = 12345
+    print(numbers)
