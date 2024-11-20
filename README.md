@@ -2,8 +2,8 @@
 
 ## 📖 Descripción
 
-MiniPython es un compilador e intérprete ligero basado en un subconjunto del lenguaje Python. Está diseñado con C# y utiliza **ANTLR4** para el análisis léxico, sintáctico y contextual. 
-El proyecto incluye una interfaz gráfica que permite a los usuarios escribir, editar y ejecutar código MiniPython fácilmente.
+MiniPython es un compilador e intérprete ligero basado en un subconjunto del lenguaje Python. Está diseñado con C# y utiliza **ANTLR4** para el análisis léxico, sintáctico, contextual, y la generación de código intermedio en formato de bytecode. 
+El proyecto incluye una interfaz gráfica que permite a los usuarios escribir, editar y ejecutar código MiniPython fácilmente. Adicionalmente, en la Etapa 3 se incorporó una máquina virtual básica que interpreta el bytecode generado, permitiendo la ejecución de programas escritos en MiniPython.
 
 ## 🛠️ Instalación
 
