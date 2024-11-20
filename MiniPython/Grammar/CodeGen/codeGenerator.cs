@@ -33,7 +33,7 @@ public class codeGenerator : MiniPythonParserBaseVisitor<object>
     private List<Instruction> byteCode; 
  
     public codeGenerator() {
-        byteCode = new List<Instruction>();
+        byteCode =new List<Instruction>();
         scopeStack.Add(new Dictionary<string, string>());
         
     }

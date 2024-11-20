@@ -1,4 +1,6 @@
-﻿using Microsoft.Win32;
+﻿using System.CodeDom.Compiler;
+using System.Diagnostics;
+using Microsoft.Win32;
 using System.IO;
 using System.Net.Http;
 using System.Text.RegularExpressions;
@@ -10,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using MiniPython.Grammar;
 using Antlr4.Runtime;
+using compilador.codeGen;
 using Generated;
 using MiniPython.Grammar.Checker;
 
@@ -553,7 +556,49 @@ namespace MiniPython
                                 }
                                 else
                                 {
+                                    var codeGenerator = new codeGenerator();
+                                    codeGenerator.Visit(result);
+                                    object byteCode = codeGenerator.Visit(result);
                                     ShowInConsole("Código ejecutado y analizado correctamente.");
+                                    
+                                    try
+                                    { 
+                                       string binDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                                       string proyectDir = Directory.GetParent(binDirectory).Parent.Parent.Parent.FullName;
+                                        string filePath = Path.Combine(proyectDir, "MiniPython_byteCode.txt");
+                                        using (StreamWriter writer = new StreamWriter(filePath))
+                                        {
+                                            writer.Write(byteCode);
+                                        }
+                                        string executable = Path.Combine(proyectDir,"MiniPython.exe");
+                                        ProcessStartInfo startInfo = new ProcessStartInfo
+                                        {
+                                            FileName = executable,
+                                            Arguments = filePath,
+                                            RedirectStandardOutput = true,
+                                            RedirectStandardError = true,
+                                            UseShellExecute = false,
+                                            CreateNoWindow = true
+                                        };
+                                        using (Process exeProcess = Process.Start(startInfo))
+                                        {
+                                            string output = exeProcess.StandardOutput.ReadToEnd();
+                                            string error = exeProcess.StandardError.ReadToEnd();
+                                            exeProcess.WaitForExit();
+                                            string fullOut = output + Environment.NewLine + error;
+                                            if (!string.IsNullOrEmpty(error)|| output.Contains("Error:")) 
+                                                ShowInConsole(new Result(false,"Error en la ejecucion:","",fullOut).ToString());
+                                            else
+                                            {
+                                                ShowInConsole(new Result(true,"Ejecucion con exito:",output,"").ToString());
+                                            }
+                                        } 
+                                    }
+                                    catch (IOException ex)
+                                    {
+                                        ShowInConsole($"Error al generar byteCode: {ex.Message}");
+                                        throw;
+                                    }
                                 }
                             }
 
