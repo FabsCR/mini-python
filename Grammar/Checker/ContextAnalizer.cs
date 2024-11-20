@@ -12,14 +12,16 @@ public class ContextAnalizer : MiniPythonParserBaseVisitor<object> {
         currentTable = new SymbolsTable();
         errorList =  new List<string>();
     }    
-    private void reportError(string error, IToken offendingToken) {
-        var err = new StringBuilder();
-        err.Append("CONTEXT ERROR - line ")
-            .Append(offendingToken.Line)
-            .Append(":")
-            .Append(offendingToken.Column + 1)
-            .Append(" ")
-            .Append(error);
+    private void reportError(String error, IToken offendingToken){
+        var err = new System.Text.StringBuilder();
+        err.Append(error).
+            Append(" ").
+            Append("line").
+            Append(" ").
+            Append(offendingToken.Line).
+            Append(":").
+            Append(offendingToken.Column+1 ).
+            Append("");
         errorList.Add(err.ToString());
     }
     public override object VisitProgram(MiniPythonParser.ProgramContext context)
@@ -35,47 +37,49 @@ public class ContextAnalizer : MiniPythonParserBaseVisitor<object> {
      return base.VisitStatement(context);;
  }
     public override object VisitDefStatement(MiniPythonParser.DefStatementContext context) {
-        string methodName = context.ID().GetText();
-        if (currentTable.SearchInCurrentLevel(methodName) != null) {
-            reportError($"The function '{methodName}' is already defined in this scope.", context.ID().Symbol);
-        } else {
+        string nombreFuncion = context.ID().GetText();
+        if (currentTable.SearchInCurrentLevel(nombreFuncion) != null) {
+            reportError($"CONTEXT ERROR  La funcion '{nombreFuncion}' ya esta definida en este scope.", context.ID().Symbol);
+        } else
+        {
             var nivel = currentTable.GetCurrentLevel();
-            if (nivel != 0 && currentTable.SearchInSpecificLevel(nivel - 1, methodName) != null) {
-                var symbol = currentTable.SearchInSpecificLevel(nivel - 1, methodName);
+            if (nivel!= 0 && currentTable.SearchInSpecificLevel(nivel-1, nombreFuncion) != null) {
+                var symbol = currentTable.SearchInSpecificLevel(nivel-1, nombreFuncion);
                 if (symbol.Type == SymbolType.Function) {
                     var methodIdent = symbol as SymbolsTable.MethodIdent;
                     if (methodIdent != null) {
-                        int parametersCount = methodIdent.Params.Count;
-                        int newParametersCount = 0;
-                        foreach (var param in context.argList().ID()) {
-                            newParametersCount++;
+                        int cantidadParametros = methodIdent.Params.Count;
+                        int cantidadParametrosNueva = 0;
+                        foreach (var param in context.argList().ID())
+                        {
+                            cantidadParametrosNueva++;
                         }
-                        if (parametersCount == newParametersCount) {
-                            reportError($"The function '{methodName}' is being redefined with the same {parametersCount} parameters.", context.ID().Symbol);
+                        if (cantidadParametros == cantidadParametrosNueva) {
+                            reportError($"CONTEXT ERROR  La funcion '{nombreFuncion}' esta siendo redefinida con los mismos {cantidadParametros} parametros.", context.ID().Symbol);
                             return null;
                         }
                     }
                 }
             }
-            List<string> parameters = new List<string>();
-            if (context.argList() != null) {
-                foreach (var param in context.argList().ID()) {
-                    parameters.Add(param.GetText());
-                }
-            }
-            currentTable.InsertFunction(context.ID().Symbol, SymbolType.Function, parameters);
-            currentTable.OpenScope();
-            if (context.argList() != null) {
-                foreach (var param in context.argList().ID()) {
-                    currentTable.InsertVariable(param.Symbol, SymbolType.Parameter);
-                }
-            }
-            Visit(context.DOSPUN());
-            Visit(context.sequence());
-            currentTable.Print();
-            currentTable.CloseScope();
+           List<string> parametros = new List<string>();
+           if (context.argList() != null) {
+               foreach (var param in context.argList().ID()){
+                       parametros.Add(param.GetText()); 
+               }
+           }
+           currentTable.InsertFunction(context.ID().Symbol, SymbolType.Function, parametros);
+           currentTable.OpenScope();
+           if (context.argList() != null) {
+               foreach (var param in context.argList().ID()) {
+                   currentTable.InsertVariable(param.Symbol, SymbolType.Parameter);
+               }
+           }
+           Visit(context.DOSPUN());
+           Visit(context.sequence());
+           currentTable.Print();
+           currentTable.CloseScope();
         }
-        return null;
+       return null;
     }
     public override object VisitArgList(MiniPythonParser.ArgListContext context)
     {
@@ -143,10 +147,10 @@ public class ContextAnalizer : MiniPythonParserBaseVisitor<object> {
     }
     public override object VisitAssignStatement(MiniPythonParser.AssignStatementContext context)
     {
-        string varName = context.ID().GetText();
+        string nombreVariable = context.ID().GetText();
         Visit(context.ID());
-        if (currentTable.SearchInCurrentLevel(varName) != null) {
-            reportError($"The variable '{varName}' is already defined in this scope.", context.ID().Symbol);
+        if (currentTable.SearchInCurrentLevel(nombreVariable) != null) {
+            reportError($"CONTEXT ERROR  La variable '{nombreVariable}' ya esta definida en este scope.", context.ID().Symbol);
         } else {
             Visit(context.ASSIGN());
             int initialErrorCount = errorList.Count;
@@ -162,11 +166,11 @@ public class ContextAnalizer : MiniPythonParserBaseVisitor<object> {
     }
     public override object VisitFunctionCallStatement(MiniPythonParser.FunctionCallStatementContext context)
     {
-        var methodName = context.ID().GetText();
-        var functionSymbol = currentTable.Search(methodName);
+        var functionName = context.ID().GetText();
+        var functionSymbol = currentTable.Search(functionName);
         if (functionSymbol == null || functionSymbol.Type != SymbolType.Function)
         {
-            reportError($"The function '{methodName}' is not defined.", context.ID().Symbol);
+            reportError($"CONTEXT ERROR  La funcion '{functionName}' no esta definida.", context.ID().Symbol);
         }
         else
         {
@@ -176,7 +180,7 @@ public class ContextAnalizer : MiniPythonParserBaseVisitor<object> {
 
             if (numArguments != numParameters)
             {
-                reportError($"The function '{methodName}' expects {numParameters} arguments, but {numArguments} were passed.", context.ID().Symbol);
+                reportError($"CONTEXT ERROR  La funcion '{functionName}' espera {numParameters} argumentos, pero se pasaron {numArguments}.", context.ID().Symbol);
             }
         } 
         
@@ -196,14 +200,14 @@ public class ContextAnalizer : MiniPythonParserBaseVisitor<object> {
                     if (identifierContext.LPAREN() != null) {
                         var functionSymbol = currentTable.Search(identifier);
                         if (functionSymbol == null || functionSymbol.Type != SymbolType.Function) {
-                            reportError($"The function '{identifier}' is not defined.", identifierContext.ID().Symbol);
+                            reportError($"CONTEXT ERROR La funcion '{identifier}' no esta definida.", identifierContext.ID().Symbol);
                         } else {
                             var methodSymbol = functionSymbol as SymbolsTable.MethodIdent;
                             int numArguments = identifierContext.expressionList()?.expression().Length ?? 0;
                             int numParameters = methodSymbol.Params.Count;
 
                             if (numArguments != numParameters) {
-                                reportError($"The function '{identifier}' expects {numParameters} arguments, but {numArguments} were passed.", identifierContext.ID().Symbol);
+                                reportError($"CONTEXT ERROR La funcion '{identifier}' espera {numParameters} argumentos, pero se pasaron {numArguments}.", identifierContext.ID().Symbol);
                             }
                         }
                     } else {
@@ -211,7 +215,7 @@ public class ContextAnalizer : MiniPythonParserBaseVisitor<object> {
                         if (symbol == null) {
                             symbol= currentTable.Search(identifier);
                             if (symbol == null) {
-                                reportError($"The variable '{identifier}' is not defined.", identifierContext.ID().Symbol);
+                                reportError($"CONTEXT ERROR La variable '{identifier}' no esta definida.", identifierContext.ID().Symbol);
                             }
                         }
                     }
@@ -245,12 +249,12 @@ public class ContextAnalizer : MiniPythonParserBaseVisitor<object> {
                 string primitiveText = primitiveExpr.GetText();
                 if (primitiveText.All(char.IsDigit))
                 {
-                    reportError($"The expression '{primitiveText}' is not indexable.", context.primitiveExpression().Start);
+                    reportError($"CONTEXT ERROR La expresión '{primitiveText}' no es indexable.", context.primitiveExpression().Start);
                     return null;
                 }
                 if (primitiveText.StartsWith("\"") && primitiveText.EndsWith("\""))
                 {
-                    reportError($"The expression '{primitiveText}' is not indexable.", context.primitiveExpression().Start);
+                    reportError($"CONTEXT ERROR La expresión '{primitiveText}' no es indexable.", context.primitiveExpression().Start);
                     return null;
                 }
                 Visit(context.expression());
@@ -297,14 +301,15 @@ public class ContextAnalizer : MiniPythonParserBaseVisitor<object> {
     {
         return base.VisitListExpression(context);
     }
-    public bool hasErrors() {
+    public bool hasErrors(){
         return errorList.Count > 0;
     }
-
-    public override string ToString() {
-        if (!hasErrors()) return "0 type/scope errors";
-        var builder = new StringBuilder();
-        foreach (var error in errorList) {
+    public override string ToString ( )
+    {
+        if ( !hasErrors() ) return "0 type/scope errors";
+        var builder = new System.Text.StringBuilder();
+        foreach (var error in errorList)
+        {
             builder.AppendLine(error);
         }
         return builder.ToString();

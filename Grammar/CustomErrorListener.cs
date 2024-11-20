@@ -13,7 +13,8 @@ namespace MiniPython.Grammar
         {
             ErrorMsgs = new List<string>();
         }
-        
+
+        // Manejo de errores de sintaxis a nivel de tokens
         public void SyntaxError(TextWriter output, IRecognizer recognizer, IToken offendingSymbol, int line, int charPositionInLine, string msg, RecognitionException e)
         {
             if (recognizer is MiniPythonParser) 
@@ -29,7 +30,8 @@ namespace MiniPython.Grammar
                 ErrorMsgs.Add("Other Error");
             }
         }
-        
+
+        // Manejo de errores de sintaxis a nivel de caracteres (lexer)
         public void SyntaxError(TextWriter output, IRecognizer recognizer, int offendingSymbol, int line, int charPositionInLine, string msg, RecognitionException e)
         {
             ErrorMsgs.Add($"LEXER ERROR - line {line}:{charPositionInLine + 1} {msg}");

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xtX62+pt0c8D8A6uT9u8B+DuOiq5lIV6+oqVGsUJN0KCHqvTymxOfDUgpfXpk/BgspJ0PDpBOYT7Mnbf4RXnRg==",
+  "dgSpecHash": "38VMlhjjbFE=",
   "success": true,
-  "projectFilePath": "D:\\projects\\mini-python\\MiniPython.csproj",
+  "projectFilePath": "D:\\Master\\TEC\\2024 Semestre II\\Compiladores e Interpretes\\Proyectos\\mini-python\\MiniPython.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\fabia\\.nuget\\packages\\antlr4.runtime.standard\\4.13.1\\antlr4.runtime.standard.4.13.1.nupkg.sha512",
-    "C:\\Users\\fabia\\.nuget\\packages\\deque\\1.0.1\\deque.1.0.1.nupkg.sha512",
-    "C:\\Users\\fabia\\.nuget\\packages\\htmlagilitypack\\1.11.65\\htmlagilitypack.1.11.65.nupkg.sha512"
+    "C:\\Users\\kvnji\\.nuget\\packages\\antlr4.runtime.standard\\4.13.1\\antlr4.runtime.standard.4.13.1.nupkg.sha512",
+    "C:\\Users\\kvnji\\.nuget\\packages\\deque\\1.0.1\\deque.1.0.1.nupkg.sha512",
+    "C:\\Users\\kvnji\\.nuget\\packages\\htmlagilitypack\\1.11.65\\htmlagilitypack.1.11.65.nupkg.sha512"
   ],
   "logs": [
     {

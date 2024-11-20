@@ -540,18 +540,8 @@ namespace MiniPython
                             lexer.AddErrorListener(_errorListener);
                             var result = parser.program();
                             if (_errorListener.HasErrors())
-                            { 
+                            {
                                 ShowInConsole(_errorListener.ToString());
-                                var contextAnalyzer = new ContextAnalizer();
-                                contextAnalyzer.Visit(result);
-                                if (contextAnalyzer.hasErrors())
-                                {
-                                    ShowInConsole(contextAnalyzer.ToString());
-                                }
-                                else
-                                {
-                                    ShowInConsole("Código ejecutado y analizado correctamente.");
-                                }
                             }
                             else
                             {
