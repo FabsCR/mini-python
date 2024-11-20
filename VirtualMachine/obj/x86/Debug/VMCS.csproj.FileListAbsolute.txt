@@ -24,3 +24,16 @@ C:\Users\oviquez\Documents\00.Cursos\Compiladores (IC-5701)\Material\VMs\obj\x86
 C:\Users\oviquez\Documents\00.Cursos\Compiladores (IC-5701)\Material\VMs\obj\x86\Debug\MiniPY.exe
 C:\Users\oviquez\Documents\00.Cursos\Compiladores (IC-5701)\Material\VMs\obj\x86\Debug\MiniPY.pdb
 C:\Users\oviquez\Documents\00.Cursos\Compiladores (IC-5701)\Material\VMs\bin\Debug\desensamblador_codigo\b.txt
+D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\VirtualMachine\bin\Debug\desensamblador_codigo\a.txt
+D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\VirtualMachine\bin\Debug\desensamblador_codigo\b.txt
+D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\VirtualMachine\bin\Debug\desensamblador_codigo\fact_iter.txt
+D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\VirtualMachine\bin\Debug\desensamblador_codigo\pruebas.txt
+D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\VirtualMachine\bin\Debug\desensamblador_codigo\test2.txt
+D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\VirtualMachine\bin\Debug\desensamblador_codigo\text.txt
+D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\VirtualMachine\bin\Debug\MiniPY.exe.config
+D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\VirtualMachine\bin\Debug\MiniPY.exe
+D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\VirtualMachine\bin\Debug\MiniPY.pdb
+D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\VirtualMachine\obj\x86\Debug\VMCS.csproj.AssemblyReference.cache
+D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\VirtualMachine\obj\x86\Debug\VMCS.csproj.CoreCompileInputs.cache
+D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\VirtualMachine\obj\x86\Debug\MiniPY.exe
+D:\Master\TEC\2024 Semestre II\Compiladores e Interpretes\Proyectos\mini-python\VirtualMachine\obj\x86\Debug\MiniPY.pdb

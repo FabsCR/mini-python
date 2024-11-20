@@ -4,7 +4,6 @@ using AlmacenNameSpace;
 using DesensambladorNameSpace;
 using moduloPila;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace Minics.exe
 {
@@ -12,16 +11,18 @@ namespace Minics.exe
     {
         static void Main(string[] args)
         {
-            
-            InstructionSet instructionSet = new InstructionSet();
-            Desensamblador desensamblador = new Desensamblador(ref instructionSet);
-            desensamblador.desensamblar(args[0]);
-            List<string> list = instructionSet.run();
-            foreach (string s in list)
+            if ((args.Length == 0) || (args.Length > 1))
             {
-                Console.WriteLine(s);
+                System.Console.WriteLine("Wrong number of arguments.");
+                System.Console.WriteLine("Usage: Minics <file.txt>");
             }
-            
+            else
+            {
+                InstructionSet instructionSet = new InstructionSet();
+                Desensamblador desensamblador = new Desensamblador(ref instructionSet);
+                desensamblador.desensamblar(args[0]);
+                instructionSet.run();
+            }
         }
     }
 }
