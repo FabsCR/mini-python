@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniPython", "MiniPython\MiniPython.csproj", "{A60C7FF3-CA3D-4D4B-92D8-3E3BBA4D6274}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VMCS", "VirtualMachine\VMCS.csproj", "{80189DCA-B0B2-4A27-9F9F-022F7FED8DC8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A60C7FF3-CA3D-4D4B-92D8-3E3BBA4D6274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A60C7FF3-CA3D-4D4B-92D8-3E3BBA4D6274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A60C7FF3-CA3D-4D4B-92D8-3E3BBA4D6274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A60C7FF3-CA3D-4D4B-92D8-3E3BBA4D6274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80189DCA-B0B2-4A27-9F9F-022F7FED8DC8}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{80189DCA-B0B2-4A27-9F9F-022F7FED8DC8}.Debug|Any CPU.Build.0 = Debug|x86
+		{80189DCA-B0B2-4A27-9F9F-022F7FED8DC8}.Release|Any CPU.ActiveCfg = Release|x86
+		{80189DCA-B0B2-4A27-9F9F-022F7FED8DC8}.Release|Any CPU.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal
